@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\bin\Debug\HeadFirstDesignPatterns.Observer.WeatherData.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\bin\Debug\HeadFirstDesignPatterns.Observer.WeatherData.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\obj\Debug\HeadFirstDesignPatterns.Observer.WeatherData.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\obj\Debug\HeadFirstDesignPatterns.Observer.WeatherData.pdb

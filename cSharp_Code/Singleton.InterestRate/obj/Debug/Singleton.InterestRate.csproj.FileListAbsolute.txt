@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\bin\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\bin\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\obj\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\obj\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.pdb

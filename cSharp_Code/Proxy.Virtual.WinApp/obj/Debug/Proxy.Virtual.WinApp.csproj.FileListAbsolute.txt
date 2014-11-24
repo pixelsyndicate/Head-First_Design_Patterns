@@ -1,0 +1,7 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\bin\Debug\HeadFirstDesignPatterns.Proxy.Virtual.WinApp.exe
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\bin\Debug\HeadFirstDesignPatterns.Proxy.Virtual.WinApp.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\obj\Debug\HeadFirstDesignPatterns.Proxy.Virtual.WinApp.ImageForm.resources
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\obj\Debug\Proxy.Virtual.WinApp.csproj.GenerateResource.Cache
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\obj\Debug\HeadFirstDesignPatterns.Proxy.Virtual.WinApp.exe
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\obj\Debug\HeadFirstDesignPatterns.Proxy.Virtual.WinApp.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Virtual.WinApp\obj\Debug\Proxy.Virtual.WinApp.csprojResolveAssemblyReference.cache

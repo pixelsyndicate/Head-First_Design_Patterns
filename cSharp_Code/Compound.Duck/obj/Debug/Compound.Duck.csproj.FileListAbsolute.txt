@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\bin\Debug\HeadFirstDesignPatterns.Compound.Duck.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\bin\Debug\HeadFirstDesignPatterns.Compound.Duck.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\obj\Debug\HeadFirstDesignPatterns.Compound.Duck.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\obj\Debug\HeadFirstDesignPatterns.Compound.Duck.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\obj\Debug\Compound.Duck.csprojResolveAssemblyReference.cache

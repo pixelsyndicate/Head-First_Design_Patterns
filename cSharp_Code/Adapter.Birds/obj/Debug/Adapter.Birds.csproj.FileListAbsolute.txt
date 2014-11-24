@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Adapter.Birds\bin\Debug\HeadFirstDesignPatterns.Adapter.Birds.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Adapter.Birds\bin\Debug\HeadFirstDesignPatterns.Adapter.Birds.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Adapter.Birds\obj\Debug\HeadFirstDesignPatterns.Adapter.Birds.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Adapter.Birds\obj\Debug\HeadFirstDesignPatterns.Adapter.Birds.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Adapter.Birds\obj\Debug\Adapter.Birds.csprojResolveAssemblyReference.cache

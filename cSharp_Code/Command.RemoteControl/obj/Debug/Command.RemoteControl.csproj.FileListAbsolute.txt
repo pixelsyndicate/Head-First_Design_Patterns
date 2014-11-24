@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\bin\Debug\HeadFirstDesignPatterns.Command.RemoteControl.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\bin\Debug\HeadFirstDesignPatterns.Command.RemoteControl.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\obj\Debug\HeadFirstDesignPatterns.Command.RemoteControl.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\obj\Debug\HeadFirstDesignPatterns.Command.RemoteControl.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\obj\Debug\Command.RemoteControl.csprojResolveAssemblyReference.cache

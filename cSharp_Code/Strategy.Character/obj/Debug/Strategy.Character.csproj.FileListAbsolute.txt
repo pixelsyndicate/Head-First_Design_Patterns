@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\bin\Debug\HeadFirstDesignPatterns.Strategy.Character.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\bin\Debug\HeadFirstDesignPatterns.Strategy.Character.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\obj\Debug\HeadFirstDesignPatterns.Strategy.Character.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\obj\Debug\HeadFirstDesignPatterns.Strategy.Character.pdb

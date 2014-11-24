@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\AbstractFactory.PizzaStore\bin\Debug\HeadFirstDesignPatterns.AbstractFactory.PizzaStore.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\AbstractFactory.PizzaStore\bin\Debug\HeadFirstDesignPatterns.AbstractFactory.PizzaStore.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\AbstractFactory.PizzaStore\obj\Debug\HeadFirstDesignPatterns.AbstractFactory.PizzaStore.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\AbstractFactory.PizzaStore\obj\Debug\HeadFirstDesignPatterns.AbstractFactory.PizzaStore.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\AbstractFactory.PizzaStore\obj\Debug\AbstractFactory.PizzaStore.csprojResolveAssemblyReference.cache

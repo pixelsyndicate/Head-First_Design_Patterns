@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\bin\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\bin\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\obj\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\obj\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.pdb

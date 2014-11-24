@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.GumballMachine\bin\Debug\HeadFirstDesignPatterns.Proxy.GumballMachine.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.GumballMachine\bin\Debug\HeadFirstDesignPatterns.Proxy.GumballMachine.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.GumballMachine\obj\Debug\HeadFirstDesignPatterns.Proxy.GumballMachine.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.GumballMachine\obj\Debug\HeadFirstDesignPatterns.Proxy.GumballMachine.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.GumballMachine\obj\Debug\Proxy.GumballMachine.csprojResolveAssemblyReference.cache

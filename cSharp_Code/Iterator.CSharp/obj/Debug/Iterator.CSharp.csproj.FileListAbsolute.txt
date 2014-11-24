@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.CSharp\bin\Debug\HeadFirstDesignPatterns.Iterator.CSharp.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.CSharp\bin\Debug\HeadFirstDesignPatterns.Iterator.CSharp.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.CSharp\obj\Debug\HeadFirstDesignPatterns.Iterator.CSharp.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.CSharp\obj\Debug\HeadFirstDesignPatterns.Iterator.CSharp.pdb

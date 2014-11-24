@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\bin\Debug\HeadFirstDesignPatterns.Strategy.Duck.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\bin\Debug\HeadFirstDesignPatterns.Strategy.Duck.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\obj\Debug\HeadFirstDesignPatterns.Strategy.Duck.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\obj\Debug\HeadFirstDesignPatterns.Strategy.Duck.pdb

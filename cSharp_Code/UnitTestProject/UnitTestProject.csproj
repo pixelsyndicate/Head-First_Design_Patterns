@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7594FF5-072C-43DC-9BF1-2F3CDCCFEDD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitTestProject</RootNamespace>
+    <AssemblyName>UnitTestProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AbstractFactoryTests.cs" />
+    <Compile Include="AdapterBirdFixture.cs" />
+    <Compile Include="CommandRemoteControlFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CompositeMenuFixture.cs" />
+    <Compile Include="CompoundDuckFixture.cs" />
+    <Compile Include="DecoratorStarbuzzFixture.cs" />
+    <Compile Include="FacadeHomeTheaterFixture.cs" />
+    <Compile Include="FactoryPizzaStoreFixture.cs" />
+    <Compile Include="IteratorCSharpCollectionFixture.cs" />
+    <Compile Include="IteratorCSharpFixture.cs" />
+    <Compile Include="IteratorMenuFixture.cs" />
+    <Compile Include="ObserverCurrentConditionDisplayFixture.cs" />
+    <Compile Include="ObserverWeatherDataDisplayFixture.cs" />
+    <Compile Include="ProxyDynamicFixture.cs" />
+    <Compile Include="SingletonRateFixture.cs" />
+    <Compile Include="StateGumballMachineFixture.cs" />
+    <Compile Include="StrategyDuckFixture.cs" />
+    <Compile Include="StrategyFootballFixture.cs" />
+    <Compile Include="StrategyWeaponFixture.cs" />
+    <Compile Include="TemplateMethodCaffeineFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractFactory.PizzaStore\AbstractFactory.PizzaStore.csproj">
+      <Project>{fdb21823-980a-401a-8e83-8dbf879fc246}</Project>
+      <Name>AbstractFactory.PizzaStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Adapter.Birds\Adapter.Birds.csproj">
+      <Project>{fe710b2a-5d26-43b2-9fef-f11e9a649b73}</Project>
+      <Name>Adapter.Birds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Command.RemoteControl\Command.RemoteControl.csproj">
+      <Project>{d80aa60a-e86f-42f7-8698-449efb248c07}</Project>
+      <Name>Command.RemoteControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Composite.Menu\Composite.Menu.csproj">
+      <Project>{ff96d383-dca1-4d99-833b-faee6e1c725f}</Project>
+      <Name>Composite.Menu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Compound.Duck\Compound.Duck.csproj">
+      <Project>{05bc56ad-8882-464f-b9a3-10656a254994}</Project>
+      <Name>Compound.Duck</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decorator.Starbuzz\Decorator.Starbuzz.csproj">
+      <Project>{54fcbc4a-a142-482a-b205-df2c984af96c}</Project>
+      <Name>Decorator.Starbuzz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Facade.HomeTheater\Facade.HomeTheater.csproj">
+      <Project>{8ec4109e-144b-451c-bb85-98b156b3c3f0}</Project>
+      <Name>Facade.HomeTheater</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Factory.PizzaStore\Factory.PizzaStore.csproj">
+      <Project>{46ba4d6e-01a2-4bad-8d9a-395ae8f10e75}</Project>
+      <Name>Factory.PizzaStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Iterator.CSharp\Iterator.CSharp.csproj">
+      <Project>{539b5cfe-1f86-44ff-b88b-b31a77ea4386}</Project>
+      <Name>Iterator.CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Iterator.Menu\Iterator.Menu.csproj">
+      <Project>{aa35ce2b-c083-454c-a63a-fc068e084a0d}</Project>
+      <Name>Iterator.Menu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Observer.WeatherData\Observer.WeatherData.csproj">
+      <Project>{c4eaf739-bb94-4f5b-93c0-61ffcfe0ba8f}</Project>
+      <Name>Observer.WeatherData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proxy.CSharp\Proxy.CSharp.csproj">
+      <Project>{54b92541-b173-4e38-b33a-33af421e6915}</Project>
+      <Name>Proxy.CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proxy.Dynamic.Net\Proxy.Dynamic.Net.csproj">
+      <Project>{32808bcb-4afc-4fe1-94d8-4153b7b20d5d}</Project>
+      <Name>Proxy.Dynamic.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proxy.GumballMachine\Proxy.GumballMachine.csproj">
+      <Project>{816bc5dd-379b-4c4a-b868-f1dc6f66454f}</Project>
+      <Name>Proxy.GumballMachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proxy.Virtual.WinApp\Proxy.Virtual.WinApp.csproj">
+      <Project>{8ebddc6a-6640-4136-a7c5-0b59f283b671}</Project>
+      <Name>Proxy.Virtual.WinApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Singleton.InterestRate\Singleton.InterestRate.csproj">
+      <Project>{974221fa-c9c5-43da-af29-705d5d533835}</Project>
+      <Name>Singleton.InterestRate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\State.GumballMachine\State.GumballMachine.csproj">
+      <Project>{820a01f1-2615-4a09-9e0c-044a5ef5db08}</Project>
+      <Name>State.GumballMachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Strategy.Character\Strategy.Character.csproj">
+      <Project>{8a43bb20-8a8e-4721-ac21-6d8bc8e0215e}</Project>
+      <Name>Strategy.Character</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Strategy.Duck\Strategy.Duck.csproj">
+      <Project>{5ef36f2c-d81f-423d-8af9-e464a617d151}</Project>
+      <Name>Strategy.Duck</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Strategy.Football\Strategy.Football.csproj">
+      <Project>{0fb098c3-60f3-4d74-b01e-c2c80247c069}</Project>
+      <Name>Strategy.Football</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TemplateMethod.CaffeineBeverage\TemplateMethod.CaffeineBeverage.csproj">
+      <Project>{f5e2cb48-3386-4a41-9c90-3a24a4e6ece7}</Project>
+      <Name>TemplateMethod.CaffeineBeverage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D80AA60A-E86F-42F7-8698-449EFB248C07}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>HeadFirstDesignPatterns.Command.RemoteControl</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HeadFirstDesignPatterns.Command.RemoteControl</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CeilingFan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CeilingFanOffCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CeilingFanOnCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Command.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarageDoor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarageDoorDownCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarageDoorUpCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hottub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HottubOffCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HottubOnCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Light.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightOffCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightOnCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LivingroomLightOffCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LivingroomLightOnCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NoCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RemoteControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpleRemoteControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stereo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StereoOffCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StereoOnWithCDCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

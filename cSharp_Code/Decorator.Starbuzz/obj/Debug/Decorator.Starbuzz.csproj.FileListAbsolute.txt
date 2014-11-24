@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Decorator.Starbuzz\bin\Debug\HeadFirstDesignPatterns.Decorator.Starbuzz.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Decorator.Starbuzz\bin\Debug\HeadFirstDesignPatterns.Decorator.Starbuzz.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Decorator.Starbuzz\obj\Debug\Decorator.Starbuzz.csprojResolveAssemblyReference.cache
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Decorator.Starbuzz\obj\Debug\HeadFirstDesignPatterns.Decorator.Starbuzz.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Decorator.Starbuzz\obj\Debug\HeadFirstDesignPatterns.Decorator.Starbuzz.pdb

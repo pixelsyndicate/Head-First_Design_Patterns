@@ -1,0 +1,5 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Facade.HomeTheater\bin\Debug\HeadFirstDesignPatterns.Facade.HomeTheater.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Facade.HomeTheater\bin\Debug\HeadFirstDesignPatterns.Facade.HomeTheater.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Facade.HomeTheater\obj\Debug\HeadFirstDesignPatterns.Facade.HomeTheater.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Facade.HomeTheater\obj\Debug\HeadFirstDesignPatterns.Facade.HomeTheater.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Facade.HomeTheater\obj\Debug\Facade.HomeTheater.csprojResolveAssemblyReference.cache

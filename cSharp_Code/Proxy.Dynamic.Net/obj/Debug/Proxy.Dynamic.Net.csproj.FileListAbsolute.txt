@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Dynamic.Net\bin\Debug\HeadFirstDesignPatterns.Proxy.Dynamic.Net.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Dynamic.Net\bin\Debug\HeadFirstDesignPatterns.Proxy.Dynamic.Net.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Dynamic.Net\obj\Debug\HeadFirstDesignPatterns.Proxy.Dynamic.Net.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Proxy.Dynamic.Net\obj\Debug\HeadFirstDesignPatterns.Proxy.Dynamic.Net.pdb

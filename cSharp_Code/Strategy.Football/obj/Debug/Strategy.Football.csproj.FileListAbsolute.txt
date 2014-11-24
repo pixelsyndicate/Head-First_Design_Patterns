@@ -1,0 +1,4 @@
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\bin\Debug\HeadFirstDesignPatterns.Strategy.Football.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\bin\Debug\HeadFirstDesignPatterns.Strategy.Football.pdb
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\obj\Debug\HeadFirstDesignPatterns.Strategy.Football.dll
+C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\obj\Debug\HeadFirstDesignPatterns.Strategy.Football.pdb
