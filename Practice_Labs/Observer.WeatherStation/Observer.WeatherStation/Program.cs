@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace Observer.WeatherStation
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             WeatherData weatherData = new WeatherData();
 
             CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
             StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
             ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+            HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
-            weatherData.setMeasurements(80, 65, 30.4f);
+            weatherData.setMeasurements(79, 65, 31.1f);
+            weatherData.setMeasurements(81, 69, 30.4f);
+            weatherData.setMeasurements(80, 65, 30.2f);
             weatherData.setMeasurements(82, 70, 29.2f);
-           weatherData.setMeasurements(78, 90, 29.2f);
-
+            weatherData.setMeasurements(78, 90, 29.1f);
+            weatherData.setMeasurements(80, 60, 30.3f);
 
             Console.WriteLine("Press enter to exit.");
             Console.ReadLine();
         }
-
-
     }
 }

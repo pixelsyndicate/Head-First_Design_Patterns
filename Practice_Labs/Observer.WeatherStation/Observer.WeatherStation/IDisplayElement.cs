@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Observer.WeatherStation
 {
-    interface IDisplayElement
+    internal interface IDisplayElement
     {
         void display();
     }

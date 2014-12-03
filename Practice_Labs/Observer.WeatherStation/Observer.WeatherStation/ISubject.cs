@@ -15,12 +15,12 @@ namespace Observer.WeatherStation
 
     public class WeatherData : ISubject
     {
-        private IList<IObserver> observers;
+        private readonly IList<IObserver> observers;
         private float temperature;
         private float humidity;
         private float pressure;
 
-        public  WeatherData()
+        public WeatherData()
         {
             observers = new List<IObserver>();
         }
@@ -45,10 +45,12 @@ namespace Observer.WeatherStation
             {
                 observer.update(temperature, humidity, pressure);
             }
-
         }
 
-        public void measurementsChanged() { notifyObservers(); }
+        public void measurementsChanged()
+        {
+            notifyObservers();
+        }
 
         public void setMeasurements(float temperature, float humidity, float pressure)
         {
