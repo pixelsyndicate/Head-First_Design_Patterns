@@ -4,18 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Observer.WeatherStation
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
+
+            
+            // this is my observable
             WeatherData weatherData = new WeatherData();
 
+            // these are my observers
             CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
             StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
             ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
             HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+
+            // lets ask the observers subscribe to the event SomethingHappened
+            weatherData.SomethingHappened += currentDisplay.HandleEvent;
+
 
             weatherData.setMeasurements(79, 65, 31.1f);
             weatherData.setMeasurements(81, 69, 30.4f);
