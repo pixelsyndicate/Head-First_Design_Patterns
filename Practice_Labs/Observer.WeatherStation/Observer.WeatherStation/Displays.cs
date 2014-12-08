@@ -6,14 +6,7 @@ using System.Threading.Tasks;
 
 namespace Observer.WeatherStation
 {
-    public abstract class Observer
-    {
-        public virtual void HandleEvent(object sender, EventArgs args)
-        {
-            Console.WriteLine(((WeatherEventArgs)args).Description + " has happened to " + sender);
-        }
-    }
-    public class CurrentConditionsDisplay : Observer, IObserver, IDisplayElement
+    public class CurrentConditionsDisplay : ObserverBase, IObserver, IDisplayElement
     {
         
         private float _temperature;
@@ -37,9 +30,10 @@ namespace Observer.WeatherStation
             Console.WriteLine(" == CURRENT CONDITIONS === ");
             Console.WriteLine("Its " + _temperature + " F degrees and " + _humidity + " % humidity");
         }
+
     }
 
-    public class ForecastDisplay : Observer, IObserver, IDisplayElement
+    public class ForecastDisplay : ObserverBase, IObserver, IDisplayElement
     {
         private float _temperature;
         private float _humidity;
@@ -93,7 +87,7 @@ namespace Observer.WeatherStation
         }
     }
 
-    public class StatisticsDisplay : Observer, IObserver, IDisplayElement
+    public class StatisticsDisplay : ObserverBase, IObserver, IDisplayElement
     {
         private float _temperature;
         private float _humidity;
@@ -125,7 +119,7 @@ namespace Observer.WeatherStation
         }
     }
 
-    public class HeatIndexDisplay : Observer, IObserver, IDisplayElement
+    public class HeatIndexDisplay : ObserverBase, IObserver, IDisplayElement
     {
         private float _temperature;
         private float _humidity;

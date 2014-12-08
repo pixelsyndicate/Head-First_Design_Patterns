@@ -45,7 +45,8 @@
     <Compile Include="IDisplayElement.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="ISubject.cs" />
-    <Compile Include="Observable.cs" />
+    <Compile Include="ObservableBase.cs" />
+    <Compile Include="ObserverBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeatherData.cs" />

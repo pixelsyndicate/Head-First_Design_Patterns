@@ -23,7 +23,7 @@ namespace Observer.WeatherStation
             HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
             // lets ask the observers subscribe to the event SomethingHappened
-            weatherData.SomethingHappened += currentDisplay.HandleEvent;
+            weatherData.LogEvent += currentDisplay.DisplayLog;
 
 
             weatherData.setMeasurements(79, 65, 31.1f);

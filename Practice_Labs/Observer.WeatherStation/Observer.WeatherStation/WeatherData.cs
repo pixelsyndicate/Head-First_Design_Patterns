@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace Observer.WeatherStation
 {
-    public class WeatherData : Observable, ISubject
+    public class WeatherData : ObservableBase, ISubject
     {
         private readonly IList<IObserver> observers;
         private float temperature;
