@@ -2,7 +2,7 @@
 {
 
 
-    public class Mocha : BeverageDecorator
+    public class Mocha : BeverageDecorator//, IOverrideDescription
     {
         Beverage _beverage;
         private const double AdditionalPrice = .20;
@@ -12,9 +12,11 @@
             this._beverage = beverage;
         }
 
-        public override string GetDescription()
+
+
+        override public string GetDescription()
         {
-            return this._beverage.GetDescription() + ", Mocha";
+            return _beverage.GetDescription() + ", Mocha";
         }
 
         public override double Cost()
@@ -22,6 +24,15 @@
             // compute the final cost with this added in
             return this._beverage.Cost() + AdditionalPrice;
         }
+    }
+
+    public interface IOverrideDescription
+    {
+        /// <summary>
+        /// BE SURE TO override string GetDescription() to ensure it's feeding from the Beverage Baseclass
+        /// </summary>
+        /// <returns></returns>
+        string GetDescription();
     }
 
     public class SteamedMilk : BeverageDecorator
