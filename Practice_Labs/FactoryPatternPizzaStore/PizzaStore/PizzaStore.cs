@@ -30,72 +30,69 @@ namespace PizzaStore
     }
 
 
-    public abstract class PizzaStores
-    {
-        internal protected Pizza pizza { get; set; }
-
-        /// <summary>
-        /// by passing "cheese', the OrderPizza() method will get a pizza from the subclass pizza store. So what you get back is dependent on what class is implimenting.
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public Pizza OrderPizza(string type)
-        {
-            // this will go out to the subclass implementation to get back the particular implimentation requested.
-            pizza = CreatePizza(type);
-
-            pizza.Prepare();
-            pizza.Bake();
-            pizza.Cut();
-            pizza.Box();
-
-            return pizza;
-        }
-
-        /// <summary>
-        /// Each subclass provides an implementation of the CreatePizza() method in PizzaStores
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public abstract Pizza CreatePizza(string type);
-
-
-
-    }
-
-
-    public class NyStylePizzaStore : PizzaStores
+    public class NyStylePizzaStore : PizzaStoreFactory
     {
         public override Pizza CreatePizza(string type)
         {
+            pizza = null;
+            IPizzaIngredientFactory ingredientFactory = new NyPizzaIngredientFactory();
 
             if (type.Equals("cheese"))
-                pizza = new NyStyleCheesePizza();
-            if (type.Equals("cheese"))
-                pizza = new NyStylePepperoniPizza();
-            if (type.Equals("cheese"))
-                pizza = new NyStyleClamPizza();
-            if (type.Equals("cheese"))
-                pizza = new NyStyleVeggiePizza();
+            {
+                pizza = new CheesePizza(ingredientFactory);
+                pizza.setName("New York Style Cheese Pizza");
+            }
+            if (type.Equals("pepperoni"))
+            {
+                pizza = new PepperoniPizza(ingredientFactory);
+                pizza.setName("The Ny Classic Pepperoni");
+
+            }
+            if (type.Equals("clam"))
+            {
+                pizza = new ClamPizza(ingredientFactory);
+                pizza.setName("NY clam Pizza Oceanview");
+            }
+            if (type.Equals("veggie"))
+            {
+                pizza = new VeggiePizza(ingredientFactory);
+                pizza.setName("NY Veggie Pie");
+            }
 
 
             return pizza;
         }
     }
 
-    public class ChicagoStylePizzaStore : PizzaStores
+    public class ChicagoStylePizzaStore : PizzaStoreFactory
     {
         public override Pizza CreatePizza(string type)
         {
 
+            pizza = null;
+            IPizzaIngredientFactory ingredientFactory = new NyPizzaIngredientFactory();
+
             if (type.Equals("cheese"))
-                pizza = new ChicagoStyleCheesePizza();
-            if (type.Equals("cheese"))
-                pizza = new ChicagoStylePepperoniPizza();
-            if (type.Equals("cheese"))
-                pizza = new ChicagoStyleClamPizza();
-            if (type.Equals("cheese"))
-                pizza = new ChicagoStyleVeggiePizza();
+            {
+                pizza = new CheesePizza(ingredientFactory);
+                pizza.setName("Chicago Style Cheese Pizza");
+            }
+            if (type.Equals("pepperoni"))
+            {
+                pizza = new PepperoniPizza(ingredientFactory);
+                pizza.setName("The Chicago Classic Pepperoni");
+
+            }
+            if (type.Equals("clam"))
+            {
+                pizza = new ClamPizza(ingredientFactory);
+                pizza.setName("Chicago Pizza Shipped In Cans Clams");
+            }
+            if (type.Equals("veggie"))
+            {
+                pizza = new VeggiePizza(ingredientFactory);
+                pizza.setName("Chicago Veggie Pie");
+            }
 
 
             return pizza;

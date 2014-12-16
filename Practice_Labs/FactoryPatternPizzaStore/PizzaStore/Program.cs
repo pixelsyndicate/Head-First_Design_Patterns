@@ -11,15 +11,15 @@ namespace PizzaStore
         static void Main(string[] args)
         {
 
-            PizzaStores nyStore = new NyStylePizzaStore();
-            PizzaStores chicagoStore = new ChicagoStylePizzaStore();
+            PizzaStoreFactory nyStore = new NyStylePizzaStore();
+            PizzaStoreFactory chicagoStore = new ChicagoStylePizzaStore();
 
 
             Pizza pizza = nyStore.OrderPizza("cheese");
             Console.WriteLine("Ethan ordered a " + pizza.GetName() + Environment.NewLine);
             Console.WriteLine("   ");
 
-            pizza = chicagoStore.OrderPizza("cheese");
+            pizza = chicagoStore.OrderPizza("clam");
             Console.WriteLine("Joel ordered a " + pizza.GetName() + Environment.NewLine);
             Console.WriteLine("   ");
 
