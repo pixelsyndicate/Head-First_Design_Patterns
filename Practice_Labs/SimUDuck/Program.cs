@@ -12,7 +12,7 @@ namespace SimUDuck
         static void Main(string[] args)
         {
 
-            
+            Console.Read();
 
         }
     }
