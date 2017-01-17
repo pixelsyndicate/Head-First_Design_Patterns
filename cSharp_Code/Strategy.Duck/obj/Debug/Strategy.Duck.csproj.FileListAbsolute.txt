@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\bin\Debug\HeadFirstDesignPatterns.Strategy.Duck.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\obj\Debug\HeadFirstDesignPatterns.Strategy.Duck.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Duck\obj\Debug\HeadFirstDesignPatterns.Strategy.Duck.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Duck\bin\Debug\HeadFirstDesignPatterns.Strategy.Duck.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Duck\bin\Debug\HeadFirstDesignPatterns.Strategy.Duck.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Duck\obj\Debug\HeadFirstDesignPatterns.Strategy.Duck.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Duck\obj\Debug\HeadFirstDesignPatterns.Strategy.Duck.pdb

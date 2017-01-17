@@ -3,3 +3,8 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\obj\Debug\HeadFirstDesignPatterns.Command.RemoteControl.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\obj\Debug\HeadFirstDesignPatterns.Command.RemoteControl.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Command.RemoteControl\obj\Debug\Command.RemoteControl.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Command.RemoteControl\bin\Debug\HeadFirstDesignPatterns.Command.RemoteControl.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Command.RemoteControl\bin\Debug\HeadFirstDesignPatterns.Command.RemoteControl.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Command.RemoteControl\obj\Debug\Command.RemoteControl.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Command.RemoteControl\obj\Debug\HeadFirstDesignPatterns.Command.RemoteControl.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Command.RemoteControl\obj\Debug\HeadFirstDesignPatterns.Command.RemoteControl.pdb

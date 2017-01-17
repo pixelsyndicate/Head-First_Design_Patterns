@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\State.GumballMachine\bin\Debug\HeadFirstDesignPatterns.State.GumballMachine.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\State.GumballMachine\obj\Debug\HeadFirstDesignPatterns.State.GumballMachine.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\State.GumballMachine\obj\Debug\HeadFirstDesignPatterns.State.GumballMachine.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\State.GumballMachine\bin\Debug\HeadFirstDesignPatterns.State.GumballMachine.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\State.GumballMachine\bin\Debug\HeadFirstDesignPatterns.State.GumballMachine.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\State.GumballMachine\obj\Debug\HeadFirstDesignPatterns.State.GumballMachine.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\State.GumballMachine\obj\Debug\HeadFirstDesignPatterns.State.GumballMachine.pdb

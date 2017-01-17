@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\bin\Debug\HeadFirstDesignPatterns.Observer.WeatherData.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\obj\Debug\HeadFirstDesignPatterns.Observer.WeatherData.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Observer.WeatherData\obj\Debug\HeadFirstDesignPatterns.Observer.WeatherData.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Observer.WeatherData\bin\Debug\HeadFirstDesignPatterns.Observer.WeatherData.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Observer.WeatherData\bin\Debug\HeadFirstDesignPatterns.Observer.WeatherData.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Observer.WeatherData\obj\Debug\HeadFirstDesignPatterns.Observer.WeatherData.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Observer.WeatherData\obj\Debug\HeadFirstDesignPatterns.Observer.WeatherData.pdb

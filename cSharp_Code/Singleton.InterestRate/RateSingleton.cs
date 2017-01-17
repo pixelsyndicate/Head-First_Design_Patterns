@@ -8,7 +8,7 @@ namespace HeadFirstDesignPatterns.Singleton.InterestRate
 	/// </summary>
 	public class RateSingleton
 	{
-		private volatile static RateSingleton uniqueInstance;
+        private static volatile RateSingleton uniqueInstance;
 		private static object syncRoot = new Object();
 
         private double currentRate =

@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\bin\Debug\HeadFirstDesignPatterns.Strategy.Character.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\obj\Debug\HeadFirstDesignPatterns.Strategy.Character.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Character\obj\Debug\HeadFirstDesignPatterns.Strategy.Character.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Character\bin\Debug\HeadFirstDesignPatterns.Strategy.Character.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Character\bin\Debug\HeadFirstDesignPatterns.Strategy.Character.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Character\obj\Debug\HeadFirstDesignPatterns.Strategy.Character.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Character\obj\Debug\HeadFirstDesignPatterns.Strategy.Character.pdb

@@ -41,16 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Beverage.cs" />
-    <Compile Include="BeverageDecorator.cs" />
-    <Compile Include="Beverages.cs" />
-    <Compile Include="Condiments.cs" />
+    <Compile Include="Abstract\Beverage.cs" />
+    <Compile Include="Abstract\BeverageDecorator.cs" />
+    <Compile Include="Abstract\Sugar.cs" />
+    <Compile Include="Beverages\DarkRoast.cs" />
+    <Compile Include="Beverages\Decaf.cs" />
+    <Compile Include="Beverages\Espresso.cs" />
+    <Compile Include="Beverages\HouseBlend.cs" />
+    <Compile Include="Abstract\IOverrideDescription.cs" />
+    <Compile Include="Condiments\Mocha.cs" />
+    <Compile Include="Condiments\Soy.cs" />
+    <Compile Include="Condiments\SteamedMilk.cs" />
+    <Compile Include="Condiments\Whip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

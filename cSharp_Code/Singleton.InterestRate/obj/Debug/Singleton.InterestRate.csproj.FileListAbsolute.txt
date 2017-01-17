@@ -2,3 +2,8 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\bin\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\obj\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Singleton.InterestRate\obj\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Singleton.InterestRate\bin\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Singleton.InterestRate\bin\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Singleton.InterestRate\obj\Debug\Singleton.InterestRate.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Singleton.InterestRate\obj\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Singleton.InterestRate\obj\Debug\HeadFirstDesignPatterns.Singleton.InterestRate.pdb

@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\bin\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\obj\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\TemplateMethod.CaffeineBeverage\obj\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\TemplateMethod.CaffeineBeverage\bin\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\TemplateMethod.CaffeineBeverage\bin\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\TemplateMethod.CaffeineBeverage\obj\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\TemplateMethod.CaffeineBeverage\obj\Debug\HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.pdb

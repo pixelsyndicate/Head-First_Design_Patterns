@@ -3,3 +3,8 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\obj\Debug\HeadFirstDesignPatterns.Compound.Duck.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\obj\Debug\HeadFirstDesignPatterns.Compound.Duck.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Compound.Duck\obj\Debug\Compound.Duck.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Compound.Duck\bin\Debug\HeadFirstDesignPatterns.Compound.Duck.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Compound.Duck\bin\Debug\HeadFirstDesignPatterns.Compound.Duck.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Compound.Duck\obj\Debug\Compound.Duck.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Compound.Duck\obj\Debug\HeadFirstDesignPatterns.Compound.Duck.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Compound.Duck\obj\Debug\HeadFirstDesignPatterns.Compound.Duck.pdb

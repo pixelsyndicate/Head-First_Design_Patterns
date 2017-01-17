@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\bin\Debug\HeadFirstDesignPatterns.Strategy.Football.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\obj\Debug\HeadFirstDesignPatterns.Strategy.Football.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Strategy.Football\obj\Debug\HeadFirstDesignPatterns.Strategy.Football.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Football\bin\Debug\HeadFirstDesignPatterns.Strategy.Football.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Football\bin\Debug\HeadFirstDesignPatterns.Strategy.Football.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Football\obj\Debug\HeadFirstDesignPatterns.Strategy.Football.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Strategy.Football\obj\Debug\HeadFirstDesignPatterns.Strategy.Football.pdb

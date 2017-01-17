@@ -2,3 +2,7 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.Menu\bin\Debug\HeadFirstDesignPatterns.Iterator.Menu.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.Menu\obj\Debug\HeadFirstDesignPatterns.Iterator.Menu.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Iterator.Menu\obj\Debug\HeadFirstDesignPatterns.Iterator.Menu.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Iterator.Menu\bin\Debug\HeadFirstDesignPatterns.Iterator.Menu.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Iterator.Menu\bin\Debug\HeadFirstDesignPatterns.Iterator.Menu.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Iterator.Menu\obj\Debug\HeadFirstDesignPatterns.Iterator.Menu.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Iterator.Menu\obj\Debug\HeadFirstDesignPatterns.Iterator.Menu.pdb

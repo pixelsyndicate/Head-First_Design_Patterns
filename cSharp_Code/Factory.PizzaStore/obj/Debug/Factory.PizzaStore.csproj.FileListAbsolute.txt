@@ -3,3 +3,8 @@ C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSh
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Factory.PizzaStore\obj\Debug\HeadFirstDesignPatterns.Factory.PizzaStore.dll
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Factory.PizzaStore\obj\Debug\HeadFirstDesignPatterns.Factory.PizzaStore.pdb
 C:\Users\mark\Documents\Visual Studio 2013\Projects\HeadFirstDesignPatternsInCSharp\Factory.PizzaStore\obj\Debug\Factory.PizzaStore.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Factory.PizzaStore\bin\Debug\HeadFirstDesignPatterns.Factory.PizzaStore.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Factory.PizzaStore\bin\Debug\HeadFirstDesignPatterns.Factory.PizzaStore.pdb
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Factory.PizzaStore\obj\Debug\Factory.PizzaStore.csprojResolveAssemblyReference.cache
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Factory.PizzaStore\obj\Debug\HeadFirstDesignPatterns.Factory.PizzaStore.dll
+C:\Users\wdobson\Source\Repos\Head-First_Design_Patterns\cSharp_Code\Factory.PizzaStore\obj\Debug\HeadFirstDesignPatterns.Factory.PizzaStore.pdb
