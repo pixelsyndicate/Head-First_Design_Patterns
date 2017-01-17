@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICommand.cs" />
+    <Compile Include="VendorCode\Commands\ICommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteControl.cs" />
-    <Compile Include="SimpleRemoteControl.cs" />
+    <Compile Include="VendorCode\RemoteControl.cs" />
+    <Compile Include="VendorCode\Hardware\SimpleRemoteControl.cs" />
     <Compile Include="VendorCode\Commands\BaseCommand.cs" />
     <Compile Include="VendorCode\Hardware\CeilingFan.cs" />
     <Compile Include="VendorCode\Commands\CeilingFanOffCommand.cs" />
@@ -56,16 +56,16 @@
     <Compile Include="VendorCode\Commands\GarageDoorCloseCommand.cs" />
     <Compile Include="VendorCode\Commands\LightOffCommand.cs" />
     <Compile Include="VendorCode\Commands\LightOnCommand.cs" />
-    <Compile Include="VendorCode\OldGarageDoorCloseCommand.cs" />
+    <Compile Include="VendorCode\Commands\OldGarageDoorCloseCommand.cs" />
     <Compile Include="VendorCode\Commands\GarageDoorOpenCommand.cs" />
     <Compile Include="VendorCode\Hardware\Light.cs" />
-    <Compile Include="VendorCode\OldLightOffCommand.cs" />
+    <Compile Include="VendorCode\Commands\OldLightOffCommand.cs" />
     <Compile Include="VendorCode\Commands\NoCommand.cs" />
-    <Compile Include="VendorCode\OldGarageDoorOpenCommand.cs" />
-    <Compile Include="VendorCode\OldLightOnCommand.cs" />
+    <Compile Include="VendorCode\Commands\OldGarageDoorOpenCommand.cs" />
+    <Compile Include="VendorCode\Commands\OldLightOnCommand.cs" />
     <Compile Include="VendorCode\Hardware\Stereo.cs" />
-    <Compile Include="VendorCode\OldStereoOffCommand.cs" />
-    <Compile Include="VendorCode\OldStereoOnCommand.cs" />
+    <Compile Include="VendorCode\Commands\OldStereoOffCommand.cs" />
+    <Compile Include="VendorCode\Commands\OldStereoOnCommand.cs" />
     <Compile Include="VendorCode\Commands\StereoOffWithCdCommand.cs" />
     <Compile Include="VendorCode\Commands\StereoOnWithCdCommand.cs" />
   </ItemGroup>

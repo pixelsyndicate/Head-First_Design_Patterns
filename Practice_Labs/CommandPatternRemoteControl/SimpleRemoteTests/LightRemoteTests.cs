@@ -1,6 +1,7 @@
 ﻿using System;
 using CommandPatternRemoteControl;
 using CommandPatternRemoteControl.VendorCode;
+using CommandPatternRemoteControl.VendorCode.Commands;
 using CommandPatternRemoteControl.VendorCode.Hardware;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

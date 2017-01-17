@@ -1,4 +1,6 @@
-﻿namespace CommandPatternRemoteControl
+﻿using CommandPatternRemoteControl.VendorCode.Commands;
+
+namespace CommandPatternRemoteControl
 {
     public class SimpleRemoteControl
     {

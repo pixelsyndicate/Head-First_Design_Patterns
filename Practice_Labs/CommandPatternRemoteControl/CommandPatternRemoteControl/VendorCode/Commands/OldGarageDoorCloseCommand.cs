@@ -1,6 +1,6 @@
 ﻿using CommandPatternRemoteControl.VendorCode.Hardware;
 
-namespace CommandPatternRemoteControl.VendorCode
+namespace CommandPatternRemoteControl.VendorCode.Commands
 {
     public class OldGarageDoorCloseCommand : ICommand
     {
