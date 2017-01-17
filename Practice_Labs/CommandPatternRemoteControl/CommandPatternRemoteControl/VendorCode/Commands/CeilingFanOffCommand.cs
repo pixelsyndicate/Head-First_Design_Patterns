@@ -21,7 +21,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
 
         public override string GetCommandName
         {
-            get { return MethodBase.GetCurrentMethod().DeclaringType?.ToString().Replace("CommandPatternRemoteControl.VendorCode.", ""); }
+            get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.ToString().Replace("Commands.", ""); }
         }
 
         public override Type GetCommandType

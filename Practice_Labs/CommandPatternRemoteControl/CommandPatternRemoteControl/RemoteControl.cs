@@ -59,7 +59,7 @@ namespace CommandPatternRemoteControl
 
             for (var i = 0; i <= _onCommands.Length - 1; i++)
             {
-                sb.Append("[slot #" + i + " '" + _slotNames[i]+ "']         " + _onCommands[i].GetCommandName + "          " + _offCommands[i].GetCommandName + "\n");
+                sb.Append("[slot #" + i+1 + " '" + _slotNames[i]+ "']    " + _onCommands[i].GetCommandName + "     " + _offCommands[i].GetCommandName + "\n");
             }
             return sb.ToString();
         }
