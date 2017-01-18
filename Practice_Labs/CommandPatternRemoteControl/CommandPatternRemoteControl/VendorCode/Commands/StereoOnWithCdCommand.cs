@@ -31,5 +31,11 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         {
             get { throw new NotImplementedException(); }
         }
+
+        public void Undo()
+        {
+            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            _receiver.Off();
+        }
     }
 }

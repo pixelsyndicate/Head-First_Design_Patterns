@@ -1,0 +1,4 @@
+namespace CommandPatternRemoteControl.VendorCode.Hardware
+{
+   
+}

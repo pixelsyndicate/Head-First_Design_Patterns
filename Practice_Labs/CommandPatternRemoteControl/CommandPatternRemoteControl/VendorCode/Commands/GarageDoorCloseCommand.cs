@@ -6,17 +6,18 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
 {
     public class GarageDoorCloseCommand : BaseCommand, IRemoteCommand
     {
-        private readonly GarageDoor _door;
+        private readonly GarageDoor _receiver;
 
-        public GarageDoorCloseCommand(GarageDoor door)
+        public GarageDoorCloseCommand(GarageDoor receiver)
         {
-            _door = door;
+            _receiver = receiver;
         }
 
         public void Execute()
         {
-            _door.Down();
-            Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
+            // Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
+            _receiver.Down();
+
         }
 
         public override string GetCommandName
@@ -28,6 +29,12 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         public override Type GetCommandType
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public void Undo()
+        {
+            //Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            _receiver.Up();
         }
     }
 }

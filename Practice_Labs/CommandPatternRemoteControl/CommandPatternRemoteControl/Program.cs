@@ -35,11 +35,12 @@ namespace CommandPatternRemoteControl
             _invoker.OnButtonWasPressed(3);
             _invoker.OnButtonWasPressed(1);
             _invoker.OffButtonWasPressed(3);
-            _invoker.OnButtonWasPressed(5);
-            _invoker.OnButtonWasPressed(2);
-            _invoker.OnButtonWasPressed(4);
-            _invoker.OffButtonWasPressed(2);
 
+            Console.WriteLine(_invoker.ToString());
+            //_invoker.OnButtonWasPressed(5);
+            //_invoker.OnButtonWasPressed(2);
+            //_invoker.OnButtonWasPressed(4);
+            //_invoker.OffButtonWasPressed(2);
             cleanUp();
 
 

@@ -4,31 +4,38 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanOffCommand : BaseCommand, IRemoteCommand
+    public class CeilingFanMediumCommand : BaseCommand, IRemoteCommand
     {
         private readonly CeilingFan _receiver;
         private int _prevSpeed;
-        public CeilingFanOffCommand(CeilingFan receiver)
+
+        public CeilingFanMediumCommand(CeilingFan receiver)
         {
             _receiver = receiver;
         }
 
-        public void Execute()
-        {
-            // Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
-            _prevSpeed = _receiver.GetSpeed();
-            _receiver.Off();
-        }
 
         public override string GetCommandName
         {
-            get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
+            get
+            {
+                return
+                    MethodBase.GetCurrentMethod()
+                        .DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", "");
+            }
 
         }
 
         public override Type GetCommandType
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public void Execute()
+        {
+            // we now track the speed before changes
+            _prevSpeed = _receiver.GetSpeed();
+            _receiver.Medium();
         }
 
         public void Undo()

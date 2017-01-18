@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Reflection;
 using System.Text;
-using CommandPatternRemoteControl.VendorCode;
 using CommandPatternRemoteControl.VendorCode.Commands;
 
 namespace CommandPatternRemoteControl
@@ -15,6 +9,7 @@ namespace CommandPatternRemoteControl
         //  private readonly IRemoteCommand[][] _slots = new IRemoteCommand[7][];
         private readonly IRemoteCommand[] _onCommands;
         private readonly IRemoteCommand[] _offCommands;
+        private IRemoteCommand _undoCommand;
         private readonly string[] _slotNames;
 
         public RemoteControl()
@@ -22,7 +17,7 @@ namespace CommandPatternRemoteControl
             _onCommands = new IRemoteCommand[7] { new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand() };
             _offCommands = new IRemoteCommand[7] { new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand() };
             _slotNames = new[] { "", "", "", "", "", "", "" };
-
+            _undoCommand = new NoCommand();
         }
 
         public void SetCommand(int slotNumber, IRemoteCommand onCommand, IRemoteCommand offCommand, string slotName = "No Name")
@@ -44,11 +39,15 @@ namespace CommandPatternRemoteControl
         /// </summary>
         public void OnButtonWasPressed(int slotNumber)
         {
-            _onCommands[slotNumber - 1].Execute();
+            int ziNum = slotNumber - 1;
+            _onCommands[ziNum].Execute();
+            _undoCommand = _onCommands[ziNum];
         }
         public void OffButtonWasPressed(int slotNumber)
         {
-            _offCommands[slotNumber - 1].Execute();
+            int ziNum = slotNumber - 1;
+            _offCommands[ziNum].Execute();
+            _undoCommand = _offCommands[ziNum];
         }
 
         // override the tostring() method so i can see debugger info on what's happening
@@ -59,9 +58,16 @@ namespace CommandPatternRemoteControl
 
             for (var i = 0; i <= _onCommands.Length - 1; i++)
             {
-                sb.Append("[slot #" + i+1 + " '" + _slotNames[i]+ "']    " + _onCommands[i].GetCommandName + "     " + _offCommands[i].GetCommandName + "\n");
+                int slotNum = i + 1;
+                sb.AppendLine("[slot #" + slotNum + " '" + _slotNames[i] + "']    " + _onCommands[i].GetCommandName + "     " + _offCommands[i].GetCommandName + "\n");
             }
+            sb.AppendLine("[undo] " + _undoCommand.GetCommandName);
             return sb.ToString();
+        }
+
+        public void UndoButtonWasPressed()
+        {
+            _undoCommand.Undo();
         }
     }
 }

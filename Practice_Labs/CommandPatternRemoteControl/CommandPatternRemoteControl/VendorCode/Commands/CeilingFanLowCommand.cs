@@ -4,21 +4,52 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanOffCommand : BaseCommand, IRemoteCommand
+    public class CeilingFanLowCommand : BaseCommand, IRemoteCommand
     {
         private readonly CeilingFan _receiver;
         private int _prevSpeed;
-        public CeilingFanOffCommand(CeilingFan receiver)
+
+        public CeilingFanLowCommand(CeilingFan receiver)
         {
             _receiver = receiver;
         }
 
         public void Execute()
         {
-            // Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
+            // we now track the speed before changes
             _prevSpeed = _receiver.GetSpeed();
-            _receiver.Off();
+            _receiver.Low();
         }
+
+        public void Undo()
+        {
+            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            // needed to track last state of multi-state elements so it could be undone.
+            switch (_prevSpeed)
+            {
+                case CeilingFan.HIGH:
+                    // we now track the speed before changes
+                    _prevSpeed = _receiver.GetSpeed();
+                    _receiver.High();
+                    break;
+                case CeilingFan.LOW:
+                    // we now track the speed before changes
+                    _prevSpeed = _receiver.GetSpeed();
+                    _receiver.Low();
+                    break;
+                case CeilingFan.MED:
+                    // we now track the speed before changes
+                    _prevSpeed = _receiver.GetSpeed();
+                    _receiver.Medium();
+                    break;
+                default:
+                    // we now track the speed before changes
+                    _prevSpeed = _receiver.GetSpeed();
+                    _receiver.Off();
+                    break;
+            }
+        }
+
 
         public override string GetCommandName
         {
@@ -31,29 +62,6 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
-        {
-            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
-            // needed to track last state of multi-state elements so it could be undone.
-            switch (_prevSpeed)
-            {
-                case CeilingFan.HIGH:
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
-                    _receiver.High();
-                    break;
-                case CeilingFan.LOW:
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
-                    _receiver.Low();
-                    break;
-                case CeilingFan.MED:
-                    _receiver.Medium();
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
-                    break;
-                default:
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
-                    _receiver.Off();
-                    break;
-            }
-        }
+
     }
 }

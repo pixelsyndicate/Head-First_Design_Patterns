@@ -8,6 +8,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
     {
         private readonly CeilingFan _receiver;
 
+
         public CeilingFanOnCommand(CeilingFan receiver)
         {
             _receiver = receiver;
@@ -17,8 +18,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         {
             Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
             _receiver.On();
-            _receiver.SetSpeed(3);
-
+            _receiver.Low();
         }
 
         public override string GetCommandName
@@ -30,6 +30,12 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         public override Type GetCommandType
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public void Undo()
+        {
+            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            _receiver.Off();
         }
     }
 }

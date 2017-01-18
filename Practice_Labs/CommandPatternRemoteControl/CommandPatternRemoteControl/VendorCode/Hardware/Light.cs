@@ -5,6 +5,7 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
     public class Light
     {
         public bool IsOn { get; set; }
+
         public void On()
         {
             IsOn = true;
@@ -17,4 +18,6 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
             Console.WriteLine("The Light Is Off.");
         }
     }
+
+
 }

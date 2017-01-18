@@ -1,4 +1,5 @@
 ﻿using System;
+using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {

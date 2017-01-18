@@ -14,9 +14,9 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         }
 
         public void Execute()
-        {
+        { Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
             _receiver.Off();
-            Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
+           
         }
 
         public override string GetCommandName
@@ -28,6 +28,12 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         public override Type GetCommandType
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public void Undo()
+        {
+            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            _receiver.On();
         }
     }
 }
