@@ -2,8 +2,20 @@
 
 namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
-    public class Light
+    public class Light : IOnOffDevice
     {
+        public Light(string name)
+        {
+            Name = name;
+        }
+
+        public Light()
+        {
+            Name = "Undefined";
+        }
+
+        public string Name { get; set; }
+
         public bool IsOn { get; set; }
 
         public void On()
@@ -18,6 +30,4 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
             Console.WriteLine("The Light Is Off.");
         }
     }
-
-
 }

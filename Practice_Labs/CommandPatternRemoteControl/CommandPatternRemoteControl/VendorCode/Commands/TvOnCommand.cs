@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 using System.Reflection;
 using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class StereoOnWithCdCommand : BaseCommand, IRemoteCommand
+    public class TvOnCommand : BaseCommand, IRemoteCommand
     {
-        private readonly Stereo _receiver;
+        private readonly TV _receiver;
 
-        public StereoOnWithCdCommand(Stereo receiver)
+        public TvOnCommand(TV receiver)
         {
             _receiver = receiver;
         }
@@ -16,11 +16,8 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         public void Execute()
         {
             _receiver.On();
-            _receiver.SetCd();
-            _receiver.SetLevel(11);
 
         }
-
         public override string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
@@ -33,7 +30,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
 
         public void Undo()
         {
-           // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             _receiver.Off();
         }
     }

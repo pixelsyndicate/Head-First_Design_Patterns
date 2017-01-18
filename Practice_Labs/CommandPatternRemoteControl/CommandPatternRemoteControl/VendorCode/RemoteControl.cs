@@ -22,14 +22,21 @@ namespace CommandPatternRemoteControl
 
         public void SetCommand(int slotNumber, IRemoteCommand onCommand, IRemoteCommand offCommand, string slotName = "No Name")
         {
+            int ziNum = slotNumber - 1;
             if (onCommand == null || offCommand == null)
             {
                 throw new ApplicationException("must have an ON and OFF command included for each remote slot.");
             }
-            _slotNames[slotNumber - 1] = slotName;
-            if (slotNumber <= _onCommands.Length) { _onCommands[slotNumber - 1] = onCommand; }
+            _slotNames[ziNum] = slotName;
+            if (slotNumber <= _onCommands.Length)
+            {
+                _onCommands[ziNum] = onCommand;
+            }
             else throw new ArgumentOutOfRangeException(nameof(slotNumber), "The remote only has " + _offCommands.Length + " available OFF slots.");
-            if (slotNumber <= _offCommands.Length) { _offCommands[slotNumber - 1] = offCommand; }
+            if (slotNumber <= _offCommands.Length)
+            {
+                _offCommands[ziNum] = offCommand;
+            }
             else throw new ArgumentOutOfRangeException(nameof(slotNumber), "The remote only has " + _onCommands.Length + " available ON slots.");
 
         }
@@ -59,9 +66,9 @@ namespace CommandPatternRemoteControl
             for (var i = 0; i <= _onCommands.Length - 1; i++)
             {
                 int slotNum = i + 1;
-                sb.AppendLine("[slot #" + slotNum + " '" + _slotNames[i] + "']    " + _onCommands[i].GetCommandName + "     " + _offCommands[i].GetCommandName + "\n");
+                sb.AppendLine("-- [slot #" + slotNum + " '" + _slotNames[i] + "']    " + _onCommands[i].GetCommandName + "     " + _offCommands[i].GetCommandName + " -- ");
             }
-            sb.AppendLine("[undo] " + _undoCommand.GetCommandName);
+            sb.AppendLine("--[undo] " + _undoCommand.GetCommandName + " -- ");
             return sb.ToString();
         }
 

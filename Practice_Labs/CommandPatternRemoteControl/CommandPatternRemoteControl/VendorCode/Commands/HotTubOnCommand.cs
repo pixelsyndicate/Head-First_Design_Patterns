@@ -1,31 +1,29 @@
-﻿using System;
+using System;
 using System.Reflection;
 using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanOffCommand : BaseCommand, IRemoteCommand
+    public class HotTubOnCommand : BaseCommand, IRemoteCommand
     {
-        private readonly CeilingFan _receiver;
-        private int _prevSpeed;
-        public CeilingFanOffCommand(CeilingFan receiver)
+        private readonly HotTub _receiver;
+        private int _prevTemp;
+
+        public HotTubOnCommand(HotTub receiver)
         {
             _receiver = receiver;
         }
 
         public void Execute()
         {
-            // Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
-            _prevSpeed = _receiver.GetLevel();
-            _receiver.Off();
-        }
+            _receiver.On(HotTub.MED);
 
+        }
         public override string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
-
         public override Type GetCommandType
         {
             get { throw new NotImplementedException(); }
@@ -33,27 +31,29 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
 
         public void Undo()
         {
-          //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+           // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
-            switch (_prevSpeed)
+            switch (_prevTemp)
             {
-                case CeilingFan.HIGH:
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
+                case HotTub.HIGH:
+                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.High();
                     break;
-                case CeilingFan.LOW:
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
+                case HotTub.LOW:
+                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.Low();
                     break;
-                case CeilingFan.MED:
+                case HotTub.MED:
                     _receiver.Medium();
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
+                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
                     break;
                 default:
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
+                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.Off();
                     break;
             }
+
         }
     }
+
 }

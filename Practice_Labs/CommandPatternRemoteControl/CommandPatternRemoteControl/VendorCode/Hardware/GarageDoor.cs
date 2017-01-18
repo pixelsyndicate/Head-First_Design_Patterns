@@ -2,7 +2,7 @@ using System;
 
 namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
-    public class GarageDoor
+    public class GarageDoor :  IUpDownDevice
     {
         public bool IsOpen { get; set; } = false;
         public void Up()

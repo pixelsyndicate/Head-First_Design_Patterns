@@ -2,7 +2,7 @@
 
 namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
-    public class Stereo
+    public class Stereo : INumericLevelDevice, IOnOffDevice
     {
         public bool IsOn { get; set; } = false;
         public void On()
@@ -21,7 +21,7 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
             Console.WriteLine("The Stereo Is Set To Play CD.");
         }
 
-        public void SetVolume(int i)
+        public void SetLevel(int i)
         {
             Console.WriteLine("The Stereo Volume Is Now Set To " + i);
         }

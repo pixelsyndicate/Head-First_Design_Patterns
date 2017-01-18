@@ -34,30 +34,30 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         public void Execute()
         {
             // we now track the speed before changes
-            _prevSpeed = _receiver.GetSpeed();
+            _prevSpeed = _receiver.GetLevel();
             _receiver.Medium();
         }
 
         public void Undo()
         {
-            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
             switch (_prevSpeed)
             {
                 case CeilingFan.HIGH:
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
+                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.High();
                     break;
                 case CeilingFan.LOW:
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
+                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.Low();
                     break;
                 case CeilingFan.MED:
                     _receiver.Medium();
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
+                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
                     break;
                 default:
-                    _prevSpeed = _receiver.GetSpeed(); // added for unlimited undos
+                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.Off();
                     break;
             }

@@ -1,49 +1,49 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
-    public class CeilingFan : BaseThreeLevelDevice, IThreeLevelDevice, IOnOffDevice
+    public class HotTub : IThreeLevelDevice, IOnOffDevice
     {
-
+        internal const int HIGH = 3;
+        internal const int MED = 2;
+        internal const int LOW = 1;
+        internal const int OFF = 0;
         private string _location;
-        private int _level = 0;
+        private int _temp = 0;
 
-        public CeilingFan(string location)
+        public HotTub(string location)
         {
             _location = location;
         }
 
-        public CeilingFan()
+        public HotTub()
         {
             _location = "Undefined";
         }
 
         public bool IsOn { get; set; }
-        public void On(int speed)
+        public void On(int temperature)
         {
             IsOn = true;
-            _level = speed;
-            Console.WriteLine("The Ceiling Fan Is On Speed " + _level);
+            _temp = temperature;
+            Console.WriteLine("The HotTub Temp Is On " + _temp);
         }
 
         public void On()
         {
-            IsOn = true;
-            _level = LOW;
-            Console.WriteLine("The Ceiling Fan Is On Speed " + _level);
+            Medium();
         }
 
         public void Off()
         {
             IsOn = false;
-            _level = 0;
-            Console.WriteLine("The Ceiling Fan Is Off.");
+            _temp = 0;
+            Console.WriteLine("The HotTub Is Off.");
         }
 
         public int GetLevel()
         {
-            return _level;
+            return _temp;
         }
 
         public void High()
@@ -59,7 +59,5 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
         {
             On(LOW);
         }
-
     }
-
 }

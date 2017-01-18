@@ -13,10 +13,8 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
-        { Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
+        public void Execute() { 
             _receiver.Off();
-           
         }
 
         public override string GetCommandName
@@ -32,7 +30,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
 
         public void Undo()
         {
-            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+           // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             _receiver.On();
         }
     }

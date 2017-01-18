@@ -176,18 +176,18 @@ namespace CommandPatternRemoteTests
 
             // is initially off
             Assert.IsFalse(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 0);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 0);
 
             // set to low
             _invoker.OnButtonWasPressed(1);
             // is now on at low speed
             Assert.IsTrue(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 1);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 1);
             // turn off 
             _invoker.OffButtonWasPressed(1);
             // is now off
             Assert.IsFalse(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 0);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 0);
 
             // peek
             Console.WriteLine(_invoker.ToString());
@@ -197,33 +197,33 @@ namespace CommandPatternRemoteTests
 
             // should now be low
             Assert.IsTrue(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 1);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 1);
 
 
             _invoker.OnButtonWasPressed(3); // high
 
             // is now on at high speed
             Assert.IsTrue(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 3);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 3);
 
             // peek
             Console.WriteLine(_invoker.ToString());
 
             _invoker.UndoButtonWasPressed(); // revert to low
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 1);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 1);
 
             _invoker.UndoButtonWasPressed();// revert to high
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 3);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 3);
             _invoker.UndoButtonWasPressed();// revert to low
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 1);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 1);
             _invoker.OffButtonWasPressed(3); // turn to off
             Assert.IsFalse(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 0);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 0);
             _invoker.UndoButtonWasPressed();// revert to low
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 1);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 1);
             _invoker.OffButtonWasPressed(3); // turn it off finally
             Assert.IsFalse(_ceilingFanReceiver.IsOn);
-            Assert.IsTrue(_ceilingFanReceiver.GetSpeed() == 0);
+            Assert.IsTrue(_ceilingFanReceiver.GetLevel() == 0);
         }
     }
 }
