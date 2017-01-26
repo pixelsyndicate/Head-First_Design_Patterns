@@ -4,52 +4,55 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class HotTubOnCommand : BaseCommand, IRemoteCommand
+    public class HotTubOnCommand : IRemoteCommand
     {
         private readonly HotTub _receiver;
-        private int _prevTemp;
+        private int _prevLevel;
+
 
         public HotTubOnCommand(HotTub receiver)
         {
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _receiver.On(HotTub.MED);
+            // we now track the speed before changes
+            _prevLevel = _receiver.GetLevel();
+            return _receiver.On(HotTub.MED);
 
         }
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
+        public Action Undo()
         {
-           // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
-            switch (_prevTemp)
+            switch (_prevLevel)
             {
                 case HotTub.HIGH:
-                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.High();
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.High();
                     break;
                 case HotTub.LOW:
-                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.Low();
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.Low();
                     break;
                 case HotTub.MED:
-                    _receiver.Medium();
-                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    break;
+
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.Medium(); break;
                 default:
-                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.Off();
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.Off();
                     break;
             }
 

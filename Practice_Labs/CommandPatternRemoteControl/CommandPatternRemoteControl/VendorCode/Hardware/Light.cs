@@ -4,30 +4,32 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
     public class Light : IOnOffDevice
     {
-        public Light(string name)
+        private string _location;
+        public Light(string location)
         {
-            Name = name;
+            _location = location;
         }
 
         public Light()
         {
-            Name = "Undefined";
+            _location = "Undefined";
         }
 
         public string Name { get; set; }
 
         public bool IsOn { get; set; }
 
-        public void On()
+        public string On()
         {
             IsOn = true;
-            Console.WriteLine("The Light Is On.");
+            return _location + " Light Is On.";
+
         }
 
-        public void Off()
+        public string Off()
         {
             IsOn = false;
-            Console.WriteLine("The Light Is Off.");
+            return _location + " Light Is Off.";
         }
     }
 }

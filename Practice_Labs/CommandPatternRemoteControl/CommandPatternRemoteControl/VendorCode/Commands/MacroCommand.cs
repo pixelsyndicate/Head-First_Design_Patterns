@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class MacroCommand : BaseCommand, IRemoteCommand
+    public class MacroCommand :  IRemoteCommand
     {
         private readonly IRemoteCommand[] _commands;
 
@@ -17,26 +17,27 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             Name = "Macro Command";
         }
 
-        public void Execute()
+        public object Execute()
         {
             foreach (var cmd in _commands)
             {
                 cmd.Execute();
             }
+            return  " --- MacroCommand.Execute() Pushed --- ";
         }
 
-        public void Undo()
+        public Action Undo()
         {
-            Console.WriteLine("Undo Macro Pushed.");
             foreach (var cmd in _commands)
             {
                 cmd.Undo();
             }
+            return null;//{ " --- MacroCommand.Undo() Pushed --- "; }
         }
 
-        public override string Name { get; set; }
+        public  string Name { get; set; }
 
-        public override string GetCommandName
+        public string GetCommandName
         {
             get
             {
@@ -47,7 +48,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             }
 
         }
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }

@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanLowCommand : BaseCommand, IRemoteCommand
+    public class CeilingFanLowCommand : IRemoteCommand
     {
         private readonly CeilingFan _receiver;
         private int _prevSpeed;
@@ -14,16 +14,16 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
             // we now track the speed before changes
             _prevSpeed = _receiver.GetLevel();
-            _receiver.Low();
+            return _receiver.Low();
         }
 
-        public void Undo()
+        public Action Undo()
         {
-          //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
             switch (_prevSpeed)
             {
@@ -48,16 +48,17 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
                     _receiver.Off();
                     break;
             }
+
+            return null;
         }
 
-
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
 
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }

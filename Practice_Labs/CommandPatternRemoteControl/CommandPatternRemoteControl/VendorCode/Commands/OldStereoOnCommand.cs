@@ -11,9 +11,9 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _receiver.Off();
+            return _receiver.Off();
         }
     }
 }

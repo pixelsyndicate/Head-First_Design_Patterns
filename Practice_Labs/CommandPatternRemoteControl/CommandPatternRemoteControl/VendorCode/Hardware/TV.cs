@@ -4,20 +4,31 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
     public class TV : IOnOffDevice
     {
+        private string _location;
+
+        public TV(string location)
+        {
+            _location = location;
+        }
+        public TV()
+        {
+            _location = "Undefined";
+        }
+
         public bool IsOn { get; set; }
 
         private int _channel { get; set; } = 1;
 
-        public void On()
+        public string On()
         {
             IsOn = true;
-            Console.WriteLine("The TV Is On.");
+            return _location + "The TV Is On.";
         }
 
-        public void Off()
+        public string Off()
         {
             IsOn = false;
-            Console.WriteLine("The TV Is Off.");
+            return _location + "The TV Is Off.";
         }
 
         public int GetChannel()

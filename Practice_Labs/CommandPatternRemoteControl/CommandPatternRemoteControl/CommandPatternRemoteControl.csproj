@@ -59,7 +59,7 @@
     <Compile Include="VendorCode\Hardware\HotTub.cs" />
     <Compile Include="VendorCode\Hardware\TV.cs" />
     <Compile Include="VendorCode\RemoteControl.cs" />
-    <Compile Include="VendorCode\Hardware\SimpleRemoteControl.cs" />
+    <Compile Include="VendorCode\SimpleRemoteControl.cs" />
     <Compile Include="VendorCode\Commands\BaseCommand.cs" />
     <Compile Include="VendorCode\Hardware\CeilingFan.cs" />
     <Compile Include="VendorCode\Commands\CeilingFanOffCommand.cs" />

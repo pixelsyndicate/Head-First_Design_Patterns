@@ -104,6 +104,7 @@ namespace CommandPatternRemoteTests
             Console.WriteLine(remoteControl.ToString());
 
             // push the party on button
+           
             remoteControl.OnButtonWasPressed(1);
 
             // push the party off button
@@ -154,7 +155,10 @@ namespace CommandPatternRemoteTests
             // push the party on button
             remoteControl.OnButtonWasPressed(1);
 
-            // push the undo button
+            // push the party off button
+            remoteControl.OffButtonWasPressed(1);
+            
+            // push the undo button to keep the party going!
             remoteControl.UndoButtonWasPressed();
         }
     }

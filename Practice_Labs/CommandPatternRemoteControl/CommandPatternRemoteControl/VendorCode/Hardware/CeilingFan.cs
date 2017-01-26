@@ -6,7 +6,7 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
     public class CeilingFan : BaseThreeLevelDevice, IThreeLevelDevice, IOnOffDevice
     {
 
-        private string _location;
+        private readonly string _location;
         private int _level = 0;
 
         public CeilingFan(string location)
@@ -20,25 +20,25 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
         }
 
         public bool IsOn { get; set; }
-        public void On(int speed)
+        public string On(int speed)
         {
             IsOn = true;
             _level = speed;
-            Console.WriteLine("The Ceiling Fan Is On Speed " + _level);
+            return _location + " Ceiling Fan Is On " + GetLevel();
         }
 
-        public void On()
+        public string On()
         {
             IsOn = true;
             _level = LOW;
-            Console.WriteLine("The Ceiling Fan Is On Speed " + _level);
+            return _location + " Ceiling Fan Is On " + GetLevel();
         }
 
-        public void Off()
+        public string Off()
         {
             IsOn = false;
             _level = 0;
-            Console.WriteLine("The Ceiling Fan Is Off.");
+            return _location + " Ceiling Fan Is Off.";
         }
 
         public int GetLevel()
@@ -46,18 +46,18 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
             return _level;
         }
 
-        public void High()
+        public string High()
         {
-            On(HIGH);
+           return On(HIGH);
         }
 
-        public void Medium()
+        public string Medium()
         {
-            On(MED);
+           return On(MED);
         }
-        public void Low()
+        public string Low()
         {
-            On(LOW);
+           return On(LOW);
         }
 
     }

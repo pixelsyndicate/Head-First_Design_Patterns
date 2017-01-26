@@ -17,11 +17,15 @@ namespace CommandPatternRemoteTests
         private Stereo _stereoReceiver;
         private CeilingFan _ceilingFanReceiver;
 
-        private GarageDoorOpenCommand _doorOpenCommand; private GarageDoorCloseCommand _doorCloseCommand;
+        private GarageDoorOpenCommand _doorOpenCommand;
+        private GarageDoorCloseCommand _doorCloseCommand;
 
-        private IRemoteCommand _lightOnCommand; private IRemoteCommand _lightOffCommand;
-        private IRemoteCommand _kitchenLightOnCommand; private IRemoteCommand _kitchenLightOffCommand;
-        private IRemoteCommand _stereoOnCommand; private IRemoteCommand _stereoOffCommand;
+        private LightOnCommand _lightOnCommand;
+        LightOffCommand _lightOffCommand;
+        private LightOnCommand _kitchenLightOnCommand;
+        LightOffCommand _kitchenLightOffCommand;
+        private StereoOnWithCdCommand _stereoOnCommand;
+        StereoOffWithCdCommand _stereoOffCommand;
 
         private CeilingFanOnCommand _ceilingFanOnCommand;
         private CeilingFanOffCommand _ceilingFanOffCommand;
@@ -42,7 +46,7 @@ namespace CommandPatternRemoteTests
             _lightReceiver = new Light();
             _stereoReceiver = new Stereo();
             _ceilingFanReceiver = new CeilingFan("Living Room");
-            _kitchenLightReceiver = new Light();
+            _kitchenLightReceiver = new Light("Kitchen");
 
 
             // my Command object in the Command Pattern.
@@ -54,7 +58,7 @@ namespace CommandPatternRemoteTests
             _kitchenLightOffCommand = new LightOffCommand(_kitchenLightReceiver);
             _stereoOnCommand = new StereoOnWithCdCommand(_stereoReceiver);
             _stereoOffCommand = new StereoOffWithCdCommand(_stereoReceiver);
-            //  _ceilingFanOnCommand = new CeilingFanOnCommand(_ceilingFanReceiver);
+            _ceilingFanOnCommand = new CeilingFanOnCommand(_ceilingFanReceiver);
             _ceilingFanOffCommand = new CeilingFanOffCommand(_ceilingFanReceiver);
             _ceilingFanHighCommand = new CeilingFanHighCommand(_ceilingFanReceiver);
             _ceilingFanMediumCommand = new CeilingFanMediumCommand(_ceilingFanReceiver);
@@ -103,36 +107,36 @@ namespace CommandPatternRemoteTests
 
 
             Assert.IsFalse(_doorReceiver.IsOpen);
-            _invoker.OnButtonWasPressed(3);
+            Assert.AreEqual("Garage Door Is Open.", _invoker.OnButtonWasPressed(3));
             Assert.IsTrue(_doorReceiver.IsOpen);
 
 
             Assert.IsFalse(_lightReceiver.IsOn);
-            _invoker.OnButtonWasPressed(1);
+            Assert.AreEqual("Undefined Light Is On.", _invoker.OnButtonWasPressed(1));
             Assert.IsTrue(_lightReceiver.IsOn);
 
 
             Assert.IsTrue(_doorReceiver.IsOpen);
-            _invoker.OffButtonWasPressed(3);
+            Assert.AreEqual("Garage Door Is Closed.", _invoker.OffButtonWasPressed(3));
             Assert.IsFalse(_doorReceiver.IsOpen);
 
 
             Assert.IsFalse(_ceilingFanReceiver.IsOn);
-            _invoker.OnButtonWasPressed(5);
+            Assert.AreEqual("Living Room Ceiling Fan Is On 1", _invoker.OnButtonWasPressed(5));
             Assert.IsTrue(_ceilingFanReceiver.IsOn);
 
 
             Assert.IsFalse(_stereoReceiver.IsOn);
-            _invoker.OnButtonWasPressed(2);
+            Assert.AreEqual(" Play CD Enabled.  Volume Set To 11. Undefined Stereo Is On. ", _invoker.OnButtonWasPressed(2));
             Assert.IsTrue(_stereoReceiver.IsOn);
 
             Assert.IsFalse(_kitchenLightReceiver.IsOn, "_lightReceiver.IsOn (should be off)");
-            _invoker.OnButtonWasPressed(4);
+            Assert.AreEqual("Kitchen Light Is On.", _invoker.OnButtonWasPressed(4));
             Assert.IsTrue(_kitchenLightReceiver.IsOn, "_lightReceiver.IsOn");
 
 
             Assert.IsTrue(_stereoReceiver.IsOn);
-            _invoker.OffButtonWasPressed(2);
+            Assert.AreEqual("Undefined Stereo Is Off. ", _invoker.OffButtonWasPressed(2));
             Assert.IsFalse(_stereoReceiver.IsOn);
         }
 
@@ -147,7 +151,7 @@ namespace CommandPatternRemoteTests
             // is initially closed
             Assert.IsFalse(_lightReceiver.IsOn);
 
-            _invoker.OnButtonWasPressed(1);
+            Assert.AreEqual("Undefined Light Is On.", _invoker.OnButtonWasPressed(1));
 
             // is now open
             Assert.IsTrue(_lightReceiver.IsOn);
@@ -156,7 +160,10 @@ namespace CommandPatternRemoteTests
             Console.WriteLine(_invoker.ToString());
 
             // UNDO Button
+            // Assert.AreEqual("Undefined Light Is Off.", 
             _invoker.UndoButtonWasPressed();
+            //    );
+            // ;
 
             // is now closed
             Assert.IsFalse(_lightReceiver.IsOn);

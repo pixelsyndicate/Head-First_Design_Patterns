@@ -4,10 +4,11 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanMediumCommand : BaseCommand, IRemoteCommand
+    public class CeilingFanMediumCommand :  IRemoteCommand
     {
         private readonly CeilingFan _receiver;
-        private int _prevSpeed;
+        private int _prevLevel;
+
 
         public CeilingFanMediumCommand(CeilingFan receiver)
         {
@@ -15,7 +16,7 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
         }
 
 
-        public override string GetCommandName
+        public string GetCommandName
         {
             get
             {
@@ -25,40 +26,37 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             }
 
         }
+        
 
-        public override Type GetCommandType
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public void Execute()
+        public object Execute()
         {
             // we now track the speed before changes
-            _prevSpeed = _receiver.GetLevel();
-            _receiver.Medium();
+            _prevLevel = _receiver.GetLevel();
+            return  _receiver.Medium();
         }
 
-        public void Undo()
+       public Action Undo()
         {
             //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
-            switch (_prevSpeed)
+            switch (_prevLevel)
             {
                 case CeilingFan.HIGH:
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.High();
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () =>  _receiver.High();
                     break;
                 case CeilingFan.LOW:
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.Low();
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.Low();
                     break;
                 case CeilingFan.MED:
-                    _receiver.Medium();
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.Medium();
+
                     break;
                 default:
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.Off();
+                    _prevLevel = _receiver.GetLevel(); // added for unlimited undos
+                    return () => _receiver.Off();
                     break;
             }
         }

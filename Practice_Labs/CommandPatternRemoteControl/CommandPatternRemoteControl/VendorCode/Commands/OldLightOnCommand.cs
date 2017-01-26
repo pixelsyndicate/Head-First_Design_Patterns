@@ -1,4 +1,5 @@
-﻿using CommandPatternRemoteControl.VendorCode.Hardware;
+﻿using System;
+using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
@@ -11,9 +12,9 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _light = light;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _light.On();
+           return _light.On();
         }
     }
 }

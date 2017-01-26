@@ -55,6 +55,7 @@
     <Compile Include="CommandPatternsRemoteUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MacroCommandTests.cs" />
+    <Compile Include="RemoteControlWithLambdaTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommandPatternRemoteControl\CommandPatternRemoteControl.csproj">

@@ -22,23 +22,23 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
         }
 
         public bool IsOn { get; set; }
-        public void On(int temperature)
+        public string On(int temperature)
         {
             IsOn = true;
             _temp = temperature;
-            Console.WriteLine("The HotTub Temp Is On " + _temp);
+            return "The HotTub Temp Is On " + _temp;
         }
 
-        public void On()
+        public string On()
         {
-            Medium();
+            return Medium();
         }
 
-        public void Off()
+        public string Off()
         {
             IsOn = false;
             _temp = 0;
-            Console.WriteLine("The HotTub Is Off.");
+            return "The HotTub Is Off.";
         }
 
         public int GetLevel()
@@ -46,18 +46,18 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
             return _temp;
         }
 
-        public void High()
+        public string High()
         {
-            On(HIGH);
+            return On(HIGH);
         }
 
-        public void Medium()
+        public string Medium()
         {
-            On(MED);
+            return On(MED);
         }
-        public void Low()
+        public string Low()
         {
-            On(LOW);
+            return On(LOW);
         }
     }
 }

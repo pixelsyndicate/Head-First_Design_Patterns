@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanOnCommand : BaseCommand, IRemoteCommand
+    public class CeilingFanOnCommand :  IRemoteCommand
     {
         private readonly CeilingFan _receiver;
 
@@ -14,26 +14,26 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _receiver.Low();
+            return _receiver.Low();
         }
 
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
 
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
+       public Action Undo()
         {
-          //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
-            _receiver.Off();
+          
+            return ()=>_receiver.Off();
         }
     }
 }

@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class TvOffCommand : BaseCommand, IRemoteCommand
+    public class TvOffCommand :  IRemoteCommand
     {
         private readonly TV _receiver;
 
@@ -13,25 +13,25 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _receiver.Off();
+            return _receiver.Off();
 
         }
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
+       public Action Undo()
         {
-          //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
-            _receiver.On();
+            //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            return () => _receiver.On();
         }
     }
 }

@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class GarageDoorOpenCommand : BaseCommand, IRemoteCommand
+    public class GarageDoorOpenCommand : IRemoteCommand
     {
         private readonly GarageDoor _receiver;
 
@@ -13,26 +13,17 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-          //  Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
-            _receiver.Up();
+
+            return _receiver.Up();
 
         }
 
-        public override string GetCommandName
+        public Action Undo()
         {
-            get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
-        }
-        public override Type GetCommandType
-        {
-            get { throw new NotImplementedException(); }
-        }
 
-        public void Undo()
-        {
-          //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
-            _receiver.Down();
+            return () => _receiver.Down();
         }
     }
 }

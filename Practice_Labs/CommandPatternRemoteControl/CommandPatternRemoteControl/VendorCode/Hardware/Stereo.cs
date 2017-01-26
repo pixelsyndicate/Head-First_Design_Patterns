@@ -4,26 +4,39 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
     public class Stereo : INumericLevelDevice, IOnOffDevice
     {
+        private readonly string _location;
+
+        public Stereo(string location)
+        {
+            _location = location;
+        }
+
+        public Stereo()
+        {
+            _location = "Undefined";
+        }
+
         public bool IsOn { get; set; } = false;
-        public void On()
+        public string On()
         {
             IsOn = true;
-            Console.WriteLine("The Stereo Is On.");
+            return _location + " Stereo Is On. ";
         }
 
-        public void Off()
+        public string Off()
         {
-            IsOn = false; Console.WriteLine("The Stereo Is Off.");
+            IsOn = false;
+            return _location + " Stereo Is Off. ";
         }
 
-        public void SetCd()
+        public string SetCd()
         {
-            Console.WriteLine("The Stereo Is Set To Play CD.");
+            return " Play CD Enabled. ";
         }
 
-        public void SetLevel(int i)
+        public string SetLevel(int i)
         {
-            Console.WriteLine("The Stereo Volume Is Now Set To " + i);
+            return " Volume Set To " + i + ". ";
         }
     }
 }

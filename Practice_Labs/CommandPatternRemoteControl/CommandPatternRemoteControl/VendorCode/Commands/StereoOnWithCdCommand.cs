@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class StereoOnWithCdCommand : BaseCommand, IRemoteCommand
+    public class StereoOnWithCdCommand :IRemoteCommand
     {
         private readonly Stereo _receiver;
 
@@ -13,28 +13,24 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _receiver.On();
-            _receiver.SetCd();
-            _receiver.SetLevel(11);
-
+            return _receiver.SetCd() + _receiver.SetLevel(11) + _receiver.On();
         }
-
-        public override string GetCommandName
+       public Action Undo()
+        {
+            return () => _receiver.Off();
+        }
+        public  string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
-        public override Type GetCommandType
+        public  Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
-        {
-           // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
-            _receiver.Off();
-        }
+
     }
 }

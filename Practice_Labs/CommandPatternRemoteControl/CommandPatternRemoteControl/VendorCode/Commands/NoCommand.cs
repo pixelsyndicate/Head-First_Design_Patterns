@@ -3,30 +3,29 @@ using System.Reflection;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class NoCommand : BaseCommand, IRemoteCommand
+    public class NoCommand : IRemoteCommand
     {
 
-        public void Execute()
+        public object Execute()
         {
-            Console.WriteLine("Beep!");
-            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            // return "No Command Executed.";
+            return "No Command Executed.";
         }
 
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
 
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
+        public Action Undo()
         {
-            Console.WriteLine("Beep!");
-            Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            return null;//() => "No Command Executed.";
 
         }
 

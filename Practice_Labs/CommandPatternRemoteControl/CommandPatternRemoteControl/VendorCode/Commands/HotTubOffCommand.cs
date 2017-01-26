@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class HotTubOffCommand : BaseCommand, IRemoteCommand
+    public class HotTubOffCommand :  IRemoteCommand
     {
         private readonly HotTub _receiver;
         private int _prevTemp;
@@ -13,42 +13,45 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _receiver.Off();
+            // we now track the speed before changes
+            _prevTemp = _receiver.GetLevel();
+            return _receiver.Off();
 
         }
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
+       public Action Undo()
         {
-           // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            // Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
             switch (_prevTemp)
             {
                 case HotTub.HIGH:
                     _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.High();
+                    return () => _receiver.High();
                     break;
                 case HotTub.LOW:
                     _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.Low();
+                    return () => _receiver.Low();
                     break;
                 case HotTub.MED:
-                    _receiver.Medium();
-                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos
+
+                    _prevTemp = _receiver.GetLevel(); // added for unlimited undos   
+                    return () => _receiver.Medium();
                     break;
                 default:
                     _prevTemp = _receiver.GetLevel(); // added for unlimited undos
-                    _receiver.Off();
+                    return () => _receiver.Off();
                     break;
             }
             // _receiver.Off();

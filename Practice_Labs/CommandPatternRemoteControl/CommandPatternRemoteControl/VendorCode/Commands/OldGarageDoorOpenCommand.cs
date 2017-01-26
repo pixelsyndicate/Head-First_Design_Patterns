@@ -11,9 +11,9 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _door = door;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _door.Up();
+            return _door.Up();
         }
     }
 }

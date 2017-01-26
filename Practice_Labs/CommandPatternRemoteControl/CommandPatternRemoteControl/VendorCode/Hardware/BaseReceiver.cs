@@ -10,27 +10,27 @@ namespace CommandPatternRemoteControl.VendorCode.Hardware
     public interface IOnOffDevice
     {
         bool IsOn { get; set; }
-        void On();
-        void Off();
+        string On();
+        string Off();
     }
 
     public interface IUpDownDevice
     {
-        void Up();
-        void Down();
+        string Up();
+        string Down();
     }
 
     public interface IThreeLevelDevice
     {
-        void On(int temperature);
-        void High();
-        void Medium();
-        void Low();
+        string On(int temperature);
+        string High();
+        string Medium();
+        string Low();
         int GetLevel();
     }
 
     public interface INumericLevelDevice
     {
-        void SetLevel(int i);
+        string SetLevel(int i);
     }
 }

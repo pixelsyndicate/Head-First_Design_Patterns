@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using CommandPatternRemoteControl.VendorCode.Commands;
 
@@ -7,17 +10,25 @@ namespace CommandPatternRemoteControl
     public class RemoteControl
     {
         //  private readonly IRemoteCommand[][] _slots = new IRemoteCommand[7][];
-        private readonly IRemoteCommand[] _onCommands;
-        private readonly IRemoteCommand[] _offCommands;
+        private readonly List<IRemoteCommand> _onCommands;
+        private readonly List<IRemoteCommand> _offCommands;
         private IRemoteCommand _undoCommand;
         private readonly string[] _slotNames;
 
         public RemoteControl()
         {
-            _onCommands = new IRemoteCommand[7] { new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand() };
-            _offCommands = new IRemoteCommand[7] { new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand(), new NoCommand() };
-            _slotNames = new[] { "", "", "", "", "", "", "" };
-            _undoCommand = new NoCommand();
+
+            IRemoteCommand noCommand = new NoCommand();
+            _onCommands = new List<IRemoteCommand>(7);// IRemoteCommand[];
+            _offCommands = new List<IRemoteCommand>(7);
+            _slotNames = new string[7];
+            for (int i = 0; i < 7; i++)
+            {
+                _onCommands.Add(noCommand);//[i] = noCommand;
+                _offCommands.Add(noCommand);//[i] = noCommand;
+                _slotNames[i] = i.ToString();
+            }
+            _undoCommand = noCommand;
         }
 
         public void SetCommand(int slotNumber, IRemoteCommand onCommand, IRemoteCommand offCommand, string slotName = "No Name")
@@ -28,53 +39,63 @@ namespace CommandPatternRemoteControl
                 throw new ApplicationException("must have an ON and OFF command included for each remote slot.");
             }
             _slotNames[ziNum] = slotName;
-            if (slotNumber <= _onCommands.Length)
+            if (slotNumber <= _onCommands.Count())
             {
-                _onCommands[ziNum] = onCommand;
+                _onCommands.RemoveAt(ziNum);
+                _onCommands.Insert(ziNum, onCommand);
             }
-            else throw new ArgumentOutOfRangeException(nameof(slotNumber), "The remote only has " + _offCommands.Length + " available OFF slots.");
-            if (slotNumber <= _offCommands.Length)
+            else throw new ArgumentOutOfRangeException(nameof(slotNumber), "The remote only has " + _offCommands.Count() + " available OFF slots.");
+            if (slotNumber <= _offCommands.Count())
             {
-                _offCommands[ziNum] = offCommand;
+                _offCommands.RemoveAt(ziNum);
+                _offCommands.Insert(ziNum, offCommand);
             }
-            else throw new ArgumentOutOfRangeException(nameof(slotNumber), "The remote only has " + _onCommands.Length + " available ON slots.");
+            else throw new ArgumentOutOfRangeException(nameof(slotNumber), "The remote only has " + _onCommands.Count() + " available ON slots.");
 
         }
 
         /// <summary>
         /// Invoker runs command.execute()
         /// </summary>
-        public void OnButtonWasPressed(int slotNumber)
+        public object OnButtonWasPressed(int slotNumber)
         {
             int ziNum = slotNumber - 1;
-            _onCommands[ziNum].Execute();
             _undoCommand = _onCommands[ziNum];
+            return _onCommands[ziNum].Execute();
+
         }
-        public void OffButtonWasPressed(int slotNumber)
+        public object OffButtonWasPressed(int slotNumber)
         {
             int ziNum = slotNumber - 1;
-            _offCommands[ziNum].Execute();
             _undoCommand = _offCommands[ziNum];
-        }
+            return _offCommands[ziNum].Execute();
 
+        }
+        public object UndoButtonWasPressed()
+        {
+            return _undoCommand.Undo();
+        }
         // override the tostring() method so i can see debugger info on what's happening
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("\n------ REMOTE CONTROL  ------\n");
+            sb.AppendLine("------ Remote Control -------");
 
-            for (var i = 0; i <= _onCommands.Length - 1; i++)
+            int counter = 0;
+            foreach (var cmd in _onCommands)
             {
-                int slotNum = i + 1;
-                sb.AppendLine("-- [slot #" + slotNum + " '" + _slotNames[i] + "']    " + _onCommands[i].GetCommandName + "     " + _offCommands[i].GetCommandName + " -- ");
+                var curInd = counter;// _onCommands.IndexOf(cmd);
+                var onCmdName = cmd.GetType().Name;
+                var matchingOff = _offCommands[curInd];
+                var offCmdName = matchingOff.GetType().Name;
+                sb.AppendLine("[slot " + curInd + "] " + onCmdName + "     " + offCmdName);
+                counter++;
             }
-            sb.AppendLine("--[undo] " + _undoCommand.GetCommandName + " -- ");
+            sb.AppendLine("Undo: " + _undoCommand.GetType().Name);
             return sb.ToString();
         }
 
-        public void UndoButtonWasPressed()
-        {
-            _undoCommand.Undo();
-        }
+
+
     }
 }

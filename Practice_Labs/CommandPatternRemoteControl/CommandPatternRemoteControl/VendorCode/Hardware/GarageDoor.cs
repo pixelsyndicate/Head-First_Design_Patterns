@@ -2,19 +2,19 @@ using System;
 
 namespace CommandPatternRemoteControl.VendorCode.Hardware
 {
-    public class GarageDoor :  IUpDownDevice
+    public class GarageDoor : IUpDownDevice
     {
         public bool IsOpen { get; set; } = false;
-        public void Up()
+        public string Up()
         {
             IsOpen = true;
-            Console.WriteLine("Garage Door Is Open.");
+            return "Garage Door Is Open.";
         }
 
-        public void Down()
+        public string Down()
         {
             IsOpen = false;
-            Console.WriteLine("Garage Door Is Closed.");
+            return "Garage Door Is Closed.";
         }
     }
 }

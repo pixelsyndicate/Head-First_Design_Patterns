@@ -4,7 +4,7 @@ using CommandPatternRemoteControl.VendorCode.Hardware;
 
 namespace CommandPatternRemoteControl.VendorCode.Commands
 {
-    public class CeilingFanOffCommand : BaseCommand, IRemoteCommand
+    public class CeilingFanOffCommand : IRemoteCommand
     {
         private readonly CeilingFan _receiver;
         private int _prevSpeed;
@@ -13,27 +13,27 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _receiver = receiver;
         }
 
-        public void Execute()
+        public object Execute()
         {
             // Console.WriteLine("\n ----- Blink Blink Blink ----- \n");
             _prevSpeed = _receiver.GetLevel();
-            _receiver.Off();
+            return _receiver.Off();
         }
 
-        public override string GetCommandName
+        public string GetCommandName
         {
             get { return MethodBase.GetCurrentMethod().DeclaringType?.FullName.Replace("CommandPatternRemoteControl.VendorCode.Commands.", ""); }
 
         }
 
-        public override Type GetCommandType
+        public Type GetCommandType
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void Undo()
+        public Action Undo()
         {
-          //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
+            //  Console.WriteLine("\n ----- UNDO PRESSED ----- \n");
             // needed to track last state of multi-state elements so it could be undone.
             switch (_prevSpeed)
             {
@@ -46,14 +46,16 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
                     _receiver.Low();
                     break;
                 case CeilingFan.MED:
+
+                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos  
                     _receiver.Medium();
-                    _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
                     break;
                 default:
                     _prevSpeed = _receiver.GetLevel(); // added for unlimited undos
                     _receiver.Off();
                     break;
             }
+            return null;
         }
     }
 }

@@ -11,9 +11,9 @@ namespace CommandPatternRemoteControl.VendorCode.Commands
             _light = light;
         }
 
-        public void Execute()
+        public object Execute()
         {
-            _light.Off();
+            return _light.Off();
         }
     }
 }
