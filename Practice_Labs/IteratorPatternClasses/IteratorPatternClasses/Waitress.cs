@@ -32,9 +32,12 @@ namespace IteratorPatternClasses
             while (iterator.HasNext())
             {
                 MenuItem menuItem = iterator.Next();
-                Console.Write($"{menuItem.GetName}, ");
-                Console.Write($"{menuItem.GetPrice} -- ");
-                Console.WriteLine($"{menuItem.GetDescription}");
+                if (menuItem != null)
+                {
+                    Console.Write($"{menuItem.GetName}, ");
+                    Console.Write($"{menuItem.GetPrice} -- ");
+                    Console.WriteLine($"{menuItem.GetDescription}");
+                }
             }
         }
 
