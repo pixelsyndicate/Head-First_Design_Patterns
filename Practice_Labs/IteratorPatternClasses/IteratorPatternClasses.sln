@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorPatternClasses", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorUnitTests", "IteratorUnitTests\IteratorUnitTests.csproj", "{479494D8-D8A9-4E51-88D7-BC5EB4BE8182}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositePatternClasses", "..\CompositPatternClasses\CompositePatternClasses\CompositePatternClasses.csproj", "{74E9E80B-51CD-4ABA-B0C4-6A1A0ADEF96B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeUnitTests", "..\CompositPatternClasses\CompositeUnitTests\CompositeUnitTests\CompositeUnitTests.csproj", "{48A2B511-C684-4809-9613-7633F6F28646}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{479494D8-D8A9-4E51-88D7-BC5EB4BE8182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479494D8-D8A9-4E51-88D7-BC5EB4BE8182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479494D8-D8A9-4E51-88D7-BC5EB4BE8182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E9E80B-51CD-4ABA-B0C4-6A1A0ADEF96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E9E80B-51CD-4ABA-B0C4-6A1A0ADEF96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E9E80B-51CD-4ABA-B0C4-6A1A0ADEF96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E9E80B-51CD-4ABA-B0C4-6A1A0ADEF96B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A2B511-C684-4809-9613-7633F6F28646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A2B511-C684-4809-9613-7633F6F28646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A2B511-C684-4809-9613-7633F6F28646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A2B511-C684-4809-9613-7633F6F28646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

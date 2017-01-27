@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace IteratorPatternClasses
 {
-    public class DinerMenuIterator : IIterator
+    public class CafeMenuEnumerable : IIterator
     {
         private readonly MenuItem[] _items;
         private int _position = 0;
 
-        public DinerMenuIterator(IEnumerable<MenuItem> menuItems)
+        public CafeMenuEnumerable(IEnumerable<MenuItem> menuItems)
         {
             _items = menuItems.ToArray();
         }
@@ -34,7 +32,7 @@ namespace IteratorPatternClasses
             _position++;
             return menuItem;
         }
+
+
     }
-
-
 }

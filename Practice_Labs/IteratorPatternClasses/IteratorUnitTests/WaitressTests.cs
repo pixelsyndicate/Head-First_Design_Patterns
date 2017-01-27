@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
 using IteratorPatternClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,17 +10,20 @@ namespace IteratorUnitTests
     public class WaitressTests
     {
         [TestMethod]
-        public void Can_I_Iterate_Through_Array()
+        public void Can_Waitress_Print_Multiple_Menus()
         {
-            var waitress = new Waitress(new PancakeHouseMenu(), new DinerMenu());
+            var waitress = new Waitress(new PancakeHouseMenu(), new DinerMenu(), new CafeMenu());
             waitress.PrintMenu();
         }
 
 
         [TestMethod]
-        public void Can_I_Iterate_Through_ArrayList()
+        public void Can_Waitress_Print_Array_of_Menus()
         {
-            var waitress = new Waitress(new PancakeHouseMenu(), new DinerMenu());
+            var menuArray = new IMenu[] { new PancakeHouseMenu(), new DinerMenu(), new CafeMenu() };
+            var waitress = new Waitress(menuArray);
+            waitress.PrintMenus();
         }
+
     }
 }

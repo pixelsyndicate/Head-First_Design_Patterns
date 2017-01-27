@@ -5,7 +5,7 @@ namespace IteratorPatternClasses
     /// <summary>
     /// one restaurant uses arraylists
     /// </summary>
-    public class PancakeHouseMenu
+    public class PancakeHouseMenu : IMenu
     {
         private IList<MenuItem> _menuItems;
 
@@ -27,10 +27,10 @@ namespace IteratorPatternClasses
 
         // we don't need to impliment this anymore because it exposes our 
         // internal implimenation ( use of IList<T> )
-        public IList<MenuItem> GetMenuItems()
-        {
-            return _menuItems;
-        }
+        //public IList<MenuItem> GetMenuItems()
+        //{
+        //    return _menuItems;
+        //}
 
         // instead we replace with this factory method, to return our own encapsulation
         // this way the client doesn't need to know how the iteration is implimneted.

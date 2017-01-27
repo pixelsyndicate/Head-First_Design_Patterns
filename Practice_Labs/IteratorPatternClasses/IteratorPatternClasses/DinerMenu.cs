@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 
 namespace IteratorPatternClasses
@@ -6,7 +8,7 @@ namespace IteratorPatternClasses
     /// <summary>
     /// one restaurant uses arrays
     /// </summary>
-    public class DinerMenu
+    public class DinerMenu : IMenu
     {
         private static readonly int MAX_ITEMS = 6;
         private int _numberOfItems = 0;
@@ -38,10 +40,10 @@ namespace IteratorPatternClasses
             }
         }
 
-        public IList<MenuItem> GetMenuItems()
-        {
-            return _menuItems;
-        }
+        //public IList<MenuItem> GetMenuItems()
+        //{
+        //    return _menuItems;
+        //}
 
         // instead we replace with this factory method, to return our own encapsulation
         // this way the client doesn't need to know how the iteration is implimneted.
@@ -51,6 +53,8 @@ namespace IteratorPatternClasses
             // aka the Hollywood Principle "don't call us, we'll call you"
             return new DinerMenuIterator(_menuItems);
         }
+
+      
 
         // other menu methods here depending on the menu being an Array
     }

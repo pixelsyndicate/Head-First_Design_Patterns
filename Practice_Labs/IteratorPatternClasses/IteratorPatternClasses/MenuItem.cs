@@ -12,31 +12,18 @@ namespace IteratorPatternClasses
 
         public MenuItem(string name, string description, bool vegetarian, double price)
         {
-            this._name = name;
-            this._description = description;
-            this._vegetarian = vegetarian;
-            this._price = price;
+            _name = name;
+            _description = description;
+            _vegetarian = vegetarian;
+            _price = price;
         }
 
+        public string GetName() => _name;
 
-        public string GetName
-        {
-            get { return _name; }
-        }
+        public string GetDescription() => _description;
 
-        public string GetDescription
-        {
-            get { return _description; }
-        }
+        public bool IsVegetarian() => _vegetarian;
 
-        public bool IsVegetarian
-        {
-            get { return _vegetarian; }
-        }
-
-        public double GetPrice
-        {
-            get { return _price; }
-        }
+        public double GetPrice() => _price;
     }
 }
