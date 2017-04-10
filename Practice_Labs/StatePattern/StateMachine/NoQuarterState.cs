@@ -4,16 +4,16 @@ namespace StateMachine
 {
     public class NoQuarterState : IState
     {
-        private readonly GumballMachine _gbMachine;
+        private readonly GumballMachineContext _context;
 
-        public NoQuarterState(GumballMachine gbm)
+        public NoQuarterState(GumballMachineContext gbm)
         {
-            _gbMachine = gbm;
+            _context = gbm;
         }
 
         public void InsertQuarter()
         {
-            _gbMachine.SetState(_gbMachine.getHasQuarterState);
+            _context.SetState(_context.HasQuarterState);
         }
 
         public void EjectQuarter()
@@ -21,6 +21,9 @@ namespace StateMachine
             Debug.WriteLine("You haven't inserted a quarter.");
         }
 
+        /// <summary>
+        /// This wouldn't work without a quarter
+        /// </summary>
         public void TurnCrank()
         {
             Debug.WriteLine("You turned, but there's no quarter.");

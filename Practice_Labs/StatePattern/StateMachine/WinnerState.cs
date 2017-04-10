@@ -4,11 +4,11 @@ namespace StateMachine
 {
     public class WinnerState : IState
     {
-        private GumballMachine _gbMachine;
+        private GumballMachineContext _context;
 
-        public WinnerState(GumballMachine gbm)
+        public WinnerState(GumballMachineContext gbm)
         {
-            _gbMachine = gbm;
+            _context = gbm;
         }
         public void InsertQuarter()
         {

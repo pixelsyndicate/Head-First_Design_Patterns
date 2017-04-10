@@ -4,11 +4,11 @@ namespace StateMachine
 {
     public class SoldOutState : IState
     {
-        private GumballMachine _gbMachine;
+        private GumballMachineContext _context;
 
-        public SoldOutState(GumballMachine gbm)
+        public SoldOutState(GumballMachineContext gbm)
         {
-            _gbMachine = gbm;
+            _context = gbm;
         }
         public void InsertQuarter()
         {
@@ -20,6 +20,9 @@ namespace StateMachine
             Debug.WriteLine("Sorry, you can't eject, you haven't inserted a quarter yet.");
         }
 
+        /// <summary>
+        /// This wouldn't work with it sold out
+        /// </summary>
         public void TurnCrank()
         {
             Debug.WriteLine("You turned, but there are no gumballs.");

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StateMachine;
 
 namespace GumballMachine.Tests
 {
@@ -14,7 +15,7 @@ namespace GumballMachine.Tests
         public void Can_I_Win_A_Gumball()
         {
             int startInventory = 10;
-            var gbm = new StateMachine.GumballMachine(startInventory);
+            var gbm = new GumballMachineContext(startInventory);
             Assert.IsNotNull(gbm);
             var inventoryCount = gbm.Inventory;
             Assert.AreEqual(startInventory, inventoryCount);
@@ -28,7 +29,7 @@ namespace GumballMachine.Tests
         public void Can_I_Get_Current_Inventory_Count()
         {
             int startInventory = 5;
-            var gbm = new StateMachine.GumballMachine(startInventory);
+            var gbm = new GumballMachineContext(startInventory);
             Assert.IsNotNull(gbm);
             var inventoryCount = 0;
             Assert.IsTrue(int.TryParse(gbm.ToString(), out inventoryCount));
@@ -41,7 +42,7 @@ namespace GumballMachine.Tests
         public void Can_I_Handle_Sold_Out()
         {
             int startInventory = 1;
-            var gbm = new StateMachine.GumballMachine(startInventory);
+            var gbm = new StateMachine.GumballMachineContext(startInventory);
             Assert.IsNotNull(gbm);
             Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
             gbm.InsertQuarter();
@@ -59,7 +60,7 @@ namespace GumballMachine.Tests
         public void Can_I_Buy_A_Gumball()
         {
             int startInventory = 5;
-            var gbm = new StateMachine.GumballMachine(startInventory);
+            var gbm = new StateMachine.GumballMachineContext(startInventory);
             Assert.IsNotNull(gbm);
             var inventoryCount = 0;
             Assert.IsTrue(int.TryParse(gbm.ToString(), out inventoryCount));

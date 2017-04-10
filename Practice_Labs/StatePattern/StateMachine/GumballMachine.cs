@@ -7,36 +7,51 @@ using System.Diagnostics;
 
 namespace StateMachine
 {
-    public class GumballMachine : IGumballMachine
+    public class GumballMachineContext : IContext
     {
-        private static IState _soldOutState;
 
         private IState _state;
+        private IState _soldOutState;
+        private IState _soldState;
+        private IState _noQuarterState;
+        private IState _hasQuarterState;
 
-        public GumballMachine(int count)
+        public GumballMachineContext(int count)
         {
             Inventory = count;
-            _soldOutState = new SoldOutState(this);
-            getSoldState = new SoldState(this);
-            getNoQuarterState = new NoQuarterState(this);
-            getHasQuarterState = new HasQuarterState(this);
+            SoldOutState = new SoldOutState(this);
+            SoldState = new SoldState(this);
+            NoQuarterState = new NoQuarterState(this);
+            HasQuarterState = new HasQuarterState(this);
             //_winnerState = new WinnerState(this);
-            _state = count > 0 ? getNoQuarterState : _soldOutState;
+            _state = count > 0 ? NoQuarterState : SoldOutState;
         }
 
         public int Inventory { get; set; }
 
-        protected internal IState getSoldOutState
+        protected internal IState SoldOutState
         {
             get { return _soldOutState; }
             set { _soldOutState = value; }
         }
 
-        protected internal IState getSoldState { get; set; }
+        protected internal IState SoldState
+        {
+            get { return _soldState; }
+            set { _soldState = value; }
+        }
 
-        protected internal IState getNoQuarterState { get; set; }
+        protected internal IState NoQuarterState
+        {
+            get { return _noQuarterState; }
+            set { _noQuarterState = value; }
+        }
 
-        protected internal IState getHasQuarterState { get; set; }
+        protected internal IState HasQuarterState
+        {
+            get { return _hasQuarterState; }
+            set { _hasQuarterState = value; }
+        }
 
         public override string ToString()
         {
@@ -65,7 +80,7 @@ namespace StateMachine
         public void TurnCrank()
         {
             _state.TurnCrank();
-            // todo: fix. only dispense if turncrank shows SoldState and isn't empty?
+            // todo: fix. only dispense if turncrank shows SoldState and isn't empty? or move this to the implementation
             if (Inventory > 0)
                 _state.Dispense();
         }

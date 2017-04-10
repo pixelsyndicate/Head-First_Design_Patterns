@@ -4,11 +4,11 @@ namespace StateMachine
 {
     public class SoldState : IState
     {
-        private readonly GumballMachine _gbMachine;
+        private readonly GumballMachineContext _context;
 
-        public SoldState(GumballMachine gbm)
+        public SoldState(GumballMachineContext gbm)
         {
-            _gbMachine = gbm;
+            _context = gbm;
         }
         public void InsertQuarter()
         {
@@ -20,6 +20,9 @@ namespace StateMachine
             Debug.WriteLine("Sorry, you already turned the crank.");
         }
 
+        /// <summary>
+        /// This wouldn't work since you already got your gumball
+        /// </summary>
         public void TurnCrank()
         {
             Debug.WriteLine("Turning twice doesn't get you a second gumball.");
@@ -31,15 +34,15 @@ namespace StateMachine
         /// </summary>
         public void Dispense()
         {
-            if (_gbMachine.Inventory > 0)
+            if (_context.Inventory > 0)
             {
-                _gbMachine.ReleaseBall();
-                _gbMachine.SetState(_gbMachine.getNoQuarterState);
+                _context.ReleaseBall();
+                _context.SetState(_context.NoQuarterState);
             }
             else
             {
                 Debug.WriteLine("Ooops. Out of gumballs!");
-                _gbMachine.SetState(_gbMachine.getSoldOutState);
+                _context.SetState(_context.SoldOutState);
             }
         }
     }

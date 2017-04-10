@@ -4,11 +4,11 @@ namespace StateMachine
 {
     public class HasQuarterState : IState
     {
-        private readonly GumballMachine _gbMachine;
+        private readonly GumballMachineContext _context;
 
-        public HasQuarterState(GumballMachine gbm)
+        public HasQuarterState(GumballMachineContext gbm)
         {
-            _gbMachine = gbm;
+            _context = gbm;
         }
         public void InsertQuarter()
         {
@@ -18,13 +18,16 @@ namespace StateMachine
         public void EjectQuarter()
         {
             Debug.WriteLine("Quarter Returned.");
-            _gbMachine.SetState(_gbMachine.getNoQuarterState);
+            _context.SetState(_context.NoQuarterState);
         }
 
+        /// <summary>
+        /// This sets state to SOLD
+        /// </summary>
         public void TurnCrank()
         {
             Debug.WriteLine("You turned...");
-            _gbMachine.SetState(_gbMachine.getSoldState);
+            _context.SetState(_context.SoldState);
         }
 
         public void Dispense()
