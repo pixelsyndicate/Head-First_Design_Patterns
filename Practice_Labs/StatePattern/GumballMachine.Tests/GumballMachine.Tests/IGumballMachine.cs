@@ -1,6 +1,6 @@
 ﻿namespace GumballMachine
 {
-    public interface IGumballMachine
+    public interface IGumballMachineOld
     {
         void InsertQuarter();
         void EjectQuarter();

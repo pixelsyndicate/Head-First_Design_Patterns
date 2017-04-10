@@ -15,7 +15,7 @@ namespace GumballMachine
         HAS_QUARTER = 2,
         SOLD = 3
     }
-    public class GumballMachine : IGumballMachine
+    public class GumballMachineOld : IGumballMachineOld
     {
         private GBStates _state = GBStates.SOLD_OUT;
         private int _count = 0;
@@ -29,7 +29,7 @@ namespace GumballMachine
             return _count.ToString();
         }
 
-        public GumballMachine(int count)
+        public GumballMachineOld(int count)
         {
             _count = count;
             if (count > 0) { _state = GBStates.NO_QUARTER; }
