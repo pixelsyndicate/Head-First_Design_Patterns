@@ -32,17 +32,17 @@ namespace StateMachine
         /// The real work happens here, ask the machine toe release a gumball
         /// Then based on final inventory, set state to NoQuarter or SoldOut
         /// </summary>
-        public void Dispense()
+        public virtual void Dispense()
         {
             if (_context.Inventory > 0)
             {
                 _context.ReleaseBall();
-                _context.SetState(_context.NoQuarterState);
+                _context.SetState(_context.GetNoQuarterState);
             }
             else
             {
                 Debug.WriteLine("Ooops. Out of gumballs!");
-                _context.SetState(_context.SoldOutState);
+                _context.SetState(_context.GetSoldOutState);
             }
         }
     }

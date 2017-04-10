@@ -9,48 +9,59 @@ namespace StateMachine
 {
     public class GumballMachineContext : IContext
     {
-
         private IState _state;
         private IState _soldOutState;
         private IState _soldState;
         private IState _noQuarterState;
         private IState _hasQuarterState;
+        private IState _winnerState;
+        private int _count;
 
         public GumballMachineContext(int count)
         {
-            Inventory = count;
-            SoldOutState = new SoldOutState(this);
-            SoldState = new SoldState(this);
-            NoQuarterState = new NoQuarterState(this);
-            HasQuarterState = new HasQuarterState(this);
-            //_winnerState = new WinnerState(this);
-            _state = count > 0 ? NoQuarterState : SoldOutState;
+            _count = count;
+            _soldOutState = new SoldOutState(this);
+            _soldState = new SoldState(this);
+            _noQuarterState = new NoQuarterState(this);
+            _hasQuarterState = new HasQuarterState(this);
+            _winnerState = new WinnerState(this);
+            _state = _count > 0 ? _noQuarterState : _soldOutState;
         }
 
-        public int Inventory { get; set; }
+        public int Inventory
+        {
+            get { return _count; }
+            set { _count = value; }
+        }
 
-        protected internal IState SoldOutState
+        protected internal IState GetSoldOutState
         {
             get { return _soldOutState; }
             set { _soldOutState = value; }
         }
 
-        protected internal IState SoldState
+        protected internal IState GetSoldState
         {
             get { return _soldState; }
             set { _soldState = value; }
         }
 
-        protected internal IState NoQuarterState
+        protected internal IState GetNoQuarterState
         {
             get { return _noQuarterState; }
             set { _noQuarterState = value; }
         }
 
-        protected internal IState HasQuarterState
+        protected internal IState GetHasQuarterState
         {
             get { return _hasQuarterState; }
             set { _hasQuarterState = value; }
+        }
+
+        protected internal IState GetWinnerState
+        {
+            get { return _winnerState; }
+            set { _winnerState = value; }
         }
 
         public override string ToString()

@@ -13,7 +13,7 @@ namespace StateMachine
 
         public void InsertQuarter()
         {
-            _context.SetState(_context.HasQuarterState);
+            _context.SetState(_context.GetHasQuarterState);
         }
 
         public void EjectQuarter()

@@ -2,31 +2,44 @@
 
 namespace StateMachine
 {
-    public class WinnerState : IState
+    public class WinnerState : SoldState, IState
     {
-        private GumballMachineContext _context;
+        private readonly GumballMachineContext _context;
 
-        public WinnerState(GumballMachineContext gbm)
+        // insert, eject and turn are the same as in SoldState
+        //public void InsertQuarter()
+        //public void EjectQuarter()
+        //public void TurnCrank()
+
+        public WinnerState(GumballMachineContext gbm) : base(gbm)
         {
             _context = gbm;
         }
-        public void InsertQuarter()
-        {
-            Debug.WriteLine("Please wait, we are dispensing your winnings.");
-        }
 
-        public void EjectQuarter()
-        {
-            Debug.WriteLine("Sorry, you already turned the crank... AND WON!");
-        }
 
-        public void TurnCrank()
+        public new void Dispense()
         {
-            Debug.WriteLine("Turning twice doesn't get you a second chance to win.");
-        }
-
-        public void Dispense()
-        {
+            _context.ReleaseBall();
+            if (_context.Inventory == 0)
+            {
+                _context.SetState(_context.GetSoldOutState);
+            }
+            else
+            {
+                // if have second gumball, then release it.
+                _context.ReleaseBall();
+                // if we did release a 2nd one, let the user know they are a winner.
+                Debug.WriteLine("YOU'RE A WINNER! You got two gumballs for your quarter");
+                if (_context.Inventory > 0)
+                {
+                    _context.SetState(_context.GetNoQuarterState);
+                }
+                else
+                {
+                    Debug.WriteLine("Oops, out of gumballs");
+                    _context.SetState(_context.GetSoldOutState);
+                }
+            }
         }
     }
 }

@@ -14,15 +14,22 @@ namespace GumballMachine.Tests
         [TestMethod]
         public void Can_I_Win_A_Gumball()
         {
-            int startInventory = 10;
+            int startInventory = 20;
             var gbm = new GumballMachineContext(startInventory);
             Assert.IsNotNull(gbm);
             var inventoryCount = gbm.Inventory;
             Assert.AreEqual(startInventory, inventoryCount);
             Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
-            gbm.InsertQuarter();
-            gbm.TurnCrank(); // -1 or -2 if is a winner
-            Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
+
+            while (gbm.Inventory > 0)
+            {
+                gbm.InsertQuarter();
+                gbm.TurnCrank();
+                Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
+            }
+            //gbm.InsertQuarter();
+            //gbm.TurnCrank(); // -1 or -2 if is a winner
+            //Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
         }
 
         [TestMethod]
