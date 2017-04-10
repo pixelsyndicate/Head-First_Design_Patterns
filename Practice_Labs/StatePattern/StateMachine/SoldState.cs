@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace GumballMachine
+namespace StateMachine
 {
     public class SoldState : IState
     {
@@ -25,18 +25,21 @@ namespace GumballMachine
             Debug.WriteLine("Turning twice doesn't get you a second gumball.");
         }
 
+        /// <summary>
+        /// The real work happens here, ask the machine toe release a gumball
+        /// Then based on final inventory, set state to NoQuarter or SoldOut
+        /// </summary>
         public void Dispense()
         {
-            Debug.WriteLine("A gumball comes rolling out the slot.");
-            _gbMachine.Inventory -= 1;
-            if (_gbMachine.Inventory == 0)
+            if (_gbMachine.Inventory > 0)
             {
-                Debug.WriteLine("Oops, out of gumballs.");
-                _gbMachine.SetState(_gbMachine.GetSoldOutState());
+                _gbMachine.ReleaseBall();
+                _gbMachine.SetState(_gbMachine.getNoQuarterState);
             }
             else
             {
-                _gbMachine.SetState(_gbMachine.GetNoQuarterState());
+                Debug.WriteLine("Ooops. Out of gumballs!");
+                _gbMachine.SetState(_gbMachine.getSoldOutState);
             }
         }
     }

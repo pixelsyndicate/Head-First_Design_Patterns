@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GumballMachine.cs" />
     <Compile Include="HasQuarterState.cs" />
     <Compile Include="IGumballMachine.cs" />
     <Compile Include="IState.cs" />

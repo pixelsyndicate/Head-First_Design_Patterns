@@ -11,15 +11,24 @@ namespace GumballMachine.Tests
     public class StateMachines201
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Can_I_Win_A_Gumball()
         {
+            int startInventory = 10;
+            var gbm = new StateMachine.GumballMachine(startInventory);
+            Assert.IsNotNull(gbm);
+            var inventoryCount = gbm.Inventory;
+            Assert.AreEqual(startInventory, inventoryCount);
+            Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
+            gbm.InsertQuarter();
+            gbm.TurnCrank(); // -1 or -2 if is a winner
+            Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
         }
 
         [TestMethod]
         public void Can_I_Get_Current_Inventory_Count()
         {
             int startInventory = 5;
-            var gbm = new GumballMachine(startInventory);
+            var gbm = new StateMachine.GumballMachine(startInventory);
             Assert.IsNotNull(gbm);
             var inventoryCount = 0;
             Assert.IsTrue(int.TryParse(gbm.ToString(), out inventoryCount));
@@ -29,10 +38,28 @@ namespace GumballMachine.Tests
 
 
         [TestMethod]
+        public void Can_I_Handle_Sold_Out()
+        {
+            int startInventory = 1;
+            var gbm = new StateMachine.GumballMachine(startInventory);
+            Assert.IsNotNull(gbm);
+            Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
+            gbm.InsertQuarter();
+            gbm.TurnCrank(); // -1
+            Assert.AreEqual(gbm.Inventory, startInventory - 1);
+            Debug.WriteLine($"The gumball machine has {gbm} gumballs.");
+
+            // try to put in a quarter
+            gbm.InsertQuarter();
+            gbm.TurnCrank();
+            gbm.EjectQuarter();
+        }
+
+        [TestMethod]
         public void Can_I_Buy_A_Gumball()
         {
             int startInventory = 5;
-            var gbm = new GumballMachine(startInventory);
+            var gbm = new StateMachine.GumballMachine(startInventory);
             Assert.IsNotNull(gbm);
             var inventoryCount = 0;
             Assert.IsTrue(int.TryParse(gbm.ToString(), out inventoryCount));

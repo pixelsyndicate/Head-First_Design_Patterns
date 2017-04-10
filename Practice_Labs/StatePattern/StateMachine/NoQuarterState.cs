@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace GumballMachine
+namespace StateMachine
 {
     public class NoQuarterState : IState
     {
@@ -13,7 +13,7 @@ namespace GumballMachine
 
         public void InsertQuarter()
         {
-            _gbMachine.SetState(_gbMachine.GetHasQuarterState());
+            _gbMachine.SetState(_gbMachine.getHasQuarterState);
         }
 
         public void EjectQuarter()

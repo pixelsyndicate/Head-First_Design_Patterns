@@ -1,4 +1,4 @@
-﻿namespace GumballMachine
+﻿namespace StateMachine
 {
     /// <summary>
     /// This looks a lot like the original IGumballMachine interface, 

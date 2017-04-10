@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace GumballMachine
+namespace StateMachine
 {
     public class SoldOutState : IState
     {
@@ -28,6 +28,11 @@ namespace GumballMachine
         public void Dispense()
         {
             Debug.WriteLine("No gumball dispensed.");
+        }
+
+        public override string ToString()
+        {
+            return "Sold Out";
         }
     }
 }

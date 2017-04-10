@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace GumballMachine
+namespace StateMachine
 {
     public class HasQuarterState : IState
     {
@@ -18,19 +18,19 @@ namespace GumballMachine
         public void EjectQuarter()
         {
             Debug.WriteLine("Quarter Returned.");
-            _gbMachine.SetState(_gbMachine.GetHasQuarterState());
+            _gbMachine.SetState(_gbMachine.getNoQuarterState);
         }
 
         public void TurnCrank()
         {
             Debug.WriteLine("You turned...");
-            _gbMachine.SetState(_gbMachine.GetSoldState());
-            Dispense();
+            _gbMachine.SetState(_gbMachine.getSoldState);
         }
 
         public void Dispense()
         {
-           
+            // dispense should never be called in this state.
+            Debug.WriteLine("No gumball dispensed");
         }
     }
 }
