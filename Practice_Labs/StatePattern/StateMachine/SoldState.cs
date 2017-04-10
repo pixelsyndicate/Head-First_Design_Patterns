@@ -2,20 +2,15 @@
 
 namespace StateMachine
 {
-    public class SoldState : IState
+    public class SoldState : AbstractState
     {
-        private readonly GumballMachineContext _context;
 
-        public SoldState(GumballMachineContext gbm)
+        public SoldState(GumballMachineContext gbm) : base(gbm)
         {
-            _context = gbm;
-        }
-        public void InsertQuarter()
-        {
-            Debug.WriteLine("Please wait, we are dispensing a gumball.");
         }
 
-        public void EjectQuarter()
+
+        public override void EjectQuarter()
         {
             Debug.WriteLine("Sorry, you already turned the crank.");
         }
@@ -23,7 +18,7 @@ namespace StateMachine
         /// <summary>
         /// This wouldn't work since you already got your gumball
         /// </summary>
-        public void TurnCrank()
+        public override void TurnCrank()
         {
             Debug.WriteLine("Turning twice doesn't get you a second gumball.");
         }
@@ -32,7 +27,7 @@ namespace StateMachine
         /// The real work happens here, ask the machine toe release a gumball
         /// Then based on final inventory, set state to NoQuarter or SoldOut
         /// </summary>
-        public virtual void Dispense()
+        public override void Dispense()
         {
             if (_context.Inventory > 0)
             {

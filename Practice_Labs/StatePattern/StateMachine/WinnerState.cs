@@ -2,10 +2,9 @@
 
 namespace StateMachine
 {
-    public class WinnerState : SoldState, IState
+    public class WinnerState : SoldState
     {
-        private readonly GumballMachineContext _context;
-
+       
         // insert, eject and turn are the same as in SoldState
         //public void InsertQuarter()
         //public void EjectQuarter()
@@ -13,13 +12,13 @@ namespace StateMachine
 
         public WinnerState(GumballMachineContext gbm) : base(gbm)
         {
-            _context = gbm;
         }
 
 
-        public new void Dispense()
+        public override void Dispense()
         {
-            _context.ReleaseBall();
+            base.Dispense();
+           // _context.ReleaseBall();
             if (_context.Inventory == 0)
             {
                 _context.SetState(_context.GetSoldOutState);

@@ -2,21 +2,19 @@ using System.Diagnostics;
 
 namespace StateMachine
 {
-    public class NoQuarterState : IState
+    public class NoQuarterState : AbstractState
     {
-        private readonly GumballMachineContext _context;
 
-        public NoQuarterState(GumballMachineContext gbm)
+        public NoQuarterState(GumballMachineContext gbm) : base(gbm)
         {
-            _context = gbm;
         }
 
-        public void InsertQuarter()
+        public override void InsertQuarter()
         {
             _context.SetState(_context.GetHasQuarterState);
         }
 
-        public void EjectQuarter()
+        public override void EjectQuarter()
         {
             Debug.WriteLine("You haven't inserted a quarter.");
         }
@@ -24,12 +22,12 @@ namespace StateMachine
         /// <summary>
         /// This wouldn't work without a quarter
         /// </summary>
-        public void TurnCrank()
+        public override void TurnCrank()
         {
             Debug.WriteLine("You turned, but there's no quarter.");
         }
 
-        public void Dispense()
+        public override void Dispense()
         {
             Debug.WriteLine("You need to pay first.");
         }
